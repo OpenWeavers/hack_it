@@ -17,8 +17,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $db = new DBHelper();
         $con = $db->getConnection();
 
-        $username = test_input($_POST['username']);
-        $password = test_input($_POST['password']);
+
+        $username = test_input(filter_input(INPUT_POST, 'username'));
+        $password = test_input(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS));
         $username = $con->real_escape_string($username);
         $password = $con->real_escape_string($password);
 
@@ -45,5 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         //handle login error
     }
 }
+
+?>
 
 //Login HTML here
