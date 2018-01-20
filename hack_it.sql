@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2018 at 01:59 PM
+-- Generation Time: Jan 20, 2018 at 04:20 PM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -21,6 +21,18 @@ SET time_zone = "+00:00";
 --
 -- Database: `hack_it`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `email_confirm`
+--
+
+CREATE TABLE `email_confirm` (
+  `username` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `hash` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -70,6 +82,13 @@ CREATE TABLE `users` (
 --
 
 --
+-- Indexes for table `email_confirm`
+--
+ALTER TABLE `email_confirm`
+  ADD PRIMARY KEY (`username`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
 -- Indexes for table `questions`
 --
 ALTER TABLE `questions`
@@ -91,6 +110,13 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
+
+--
+-- Constraints for table `email_confirm`
+--
+ALTER TABLE `email_confirm`
+  ADD CONSTRAINT `fk_ec_1` FOREIGN KEY (`email`) REFERENCES `users` (`email`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `fk_ec_2` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `track_records`
