@@ -113,6 +113,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
+
 <html lang="">
     <head>
         <meta charset="utf-8">
@@ -172,6 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="icon_prefix">Username</label>
         </div>
         <div class="input-field col s12">
+            <i class="material-icons prefix">lock</i>
           <input name="password" id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
@@ -181,6 +183,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="icon_telephone">Telephone</label>
         </div>
         <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
           <input name="email" id="email" type="email" class="validate">
           <label for="email" data-error="wrong" data-success="right">Email</label>
         </div>
