@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $query = "INSERT INTO track_records(username, current_level, total_score, current_hint_took, on_block, when_to_unblock) VALUES ('$username',0,0,0,0,'$date')";
                     $res = $con->query($query);
-                    header("location:login.php");
+                    header("location:signup_success.php");
                 }
             }
             else    {
