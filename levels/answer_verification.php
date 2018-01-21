@@ -21,12 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
         $answer = $con->real_escape_string($answer);
 
         //fetch actual answer to verify
-        $query = "SELECT * FROM questions WHERE question_no='{$_SESSION['current_level']}'";
+        $question_no = $_SESSION['current_level'];
+        $query = "SELECT * FROM questions WHERE question_no='$question_no'";
         $res = $con->query($query);
         $r = $res->fetch_assoc();
         $actual_answer = $r['answer'];
         $points = $r['points'];
-        $query = "SELECT * FROM track_records WHERE username={$_SESSION['username']}";
+        $username = $_SESSION['username'];
+        $query = "SELECT * FROM track_records WHERE username='$username'";
         $res = $con->query($query);
         $r = $res->fetch_assoc();
         $current_level = $r['current_level'];
@@ -40,7 +42,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
             }
             $current_level = $current_level + 1;
             //Reflect in DB
-            $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0";
+            $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0 WHERE username='$username'";
             $con->query($query);
 
             //Now handle session variables!
@@ -48,16 +50,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
             $_SESSION['total_score'] = $total_score;
             $_SESSION['current_hint_took'] = 0;
 
-            header("location:".$_SESSION['current_level']."php");
+            header("location:".$_SESSION['current_level'].".php");
         }
         else    {
-            echo "Don't try to be smart!";
+            header("location:".$_SESSION['current_level'].".php");
         }
     }
     else    {
-        echo "Empty answer";
+        header("location:".$_SESSION['current_level'].".php");
     }
 }
 else    {
-    header("location:" . $_SESSION['current_level'] . "php");
+    header("location:".$_SESSION['current_level'].".php");
 }

@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['on_block'] = $r1['on_block'];
                 $_SESSION['when_to_unblock'] = $r1['when_to_unblock'];
             }
-            header("levels/{$_SESSION['current_level']}.php");
+            header("location:levels/".$_SESSION['current_level'].".php");
         }
 
         //handle login error
