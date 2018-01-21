@@ -56,7 +56,7 @@
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="">Leader Board</a>
                     <a class="mdl-navigation__link" href="">r/hack_it</a>
-                    <a class="mdl-navigation__link" href="">About</a>
+                    <a class="mdl-navigation__link" href="about.php">About</a>
                     <a class="mdl-navigation__link" href="">Sign In</a>
                 </nav>
             </div>
@@ -70,9 +70,6 @@
                             </div>
                             <div class="row">
                                 <!-- Wide card with share menu button -->
-
-
-
                                 <div class="demo-card-wide mdl-card mdl-shadow--2dp col s6 m6" style="position: relative;">
                                     <div class="mdl-card__title">
                                         <h2 class="mdl-card__title-text" style="color: black">Welcome</h2>
@@ -85,8 +82,8 @@
                                             Sign Up
                                         </a>
                                     </div>
-                                </div></div>
-
+                                </div>
+                            </div>
                         </div>
                     </div>
             </main>
