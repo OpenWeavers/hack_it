@@ -24,6 +24,7 @@
         });
 
         </script>
+
     </head>
     <body>
         <!--[if lte IE 9]>
@@ -32,23 +33,8 @@
 
         <!-- Add your site or application content here -->
         <!-- Always shows a header, even in smaller screens. -->
-            <nav>
-              <div class="nav-wrapper">
-                <a href="#!" class="brand-logo">Hack_It</a>
-                <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-                <ul class="right hide-on-med-and-down">
-                  <li><a href="#">Leaderboard</a></li>
-                  <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-                  <li><a href="#">Level No</a></li>
-                  <li><a href="#">Sign Out</a></li>
-                </ul>
-                <ul class="side-nav" id="mobile-demo">
-                  <li><a href="#">Leaderboard</a></li>
-                  <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-                  <li><a href="#">Level No.</a></li>
-                  <li><a href="#">Sign Out</a></li>
-                </ul>
-              </div>
-          </nav>
+        <?php
+    include ("header.php");
+    ?>
     </body>
 </html>

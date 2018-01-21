@@ -1,6 +1,8 @@
 <html>
 <body>
-
+<?php
+include ("header.php");
+?>
 <?php
 
 require 'mailer.php';
