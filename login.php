@@ -49,4 +49,72 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 ?>
 
-//Login HTML here
+<html lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>SignUp</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css" />
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <!--<link rel="stylesheet" href="css/materialize.css" >-->
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <style>
+        #login form{
+          display: inline-block;
+          position: fixed;
+          left: 0;
+          right: 0;
+          margin: auto;
+        }
+        </style>
+    </head>
+    <body>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Hack_It</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="#">r/hack_it</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="#">r/hack_it</a></li>
+            <li><a href="#">About</a></li>
+          </ul>
+        </div>
+    </nav>
+      &nbsp; &nbsp;
+    <div class="row" id="login">
+
+    <form class="col s6">
+      <div class="row">
+        <div class="input-field col s12">
+          <i class="material-icons prefix">account_circle</i>
+          <input id="icon_prefix" type="text" class="validate">
+          <label for="icon_prefix">Username</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
+        </div>
+        <button class="btn waves-effect waves-light" type="submit" name="action">LogIn
+          <i class="fa fa-sign-in right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+  </body>
+</html>
