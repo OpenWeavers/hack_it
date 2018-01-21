@@ -157,13 +157,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </ul>
         </div>
     </nav>
+      &nbsp; &nbsp;
     <div class="row" id="sgnupform">
+
     <form class="col s6">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
           <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">First Name</label>
+          <label for="icon_prefix">Username</label>
+        </div>
+        <div class="input-field col s12">
+          <input id="password" type="password" class="validate">
+          <label for="password">Password</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
@@ -174,6 +180,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input id="email" type="email" class="validate">
           <label for="email" data-error="wrong" data-success="right">Email</label>
         </div>
+          <div class="input-field col s12">
+              <input id="college" type="text" class="validate">
+              <label for="college">College Name</label>
+          </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
         </button>
