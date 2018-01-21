@@ -1,4 +1,5 @@
 <?php
+require 'mailer.php';
 require 'com/config/DBHelper.php';
 session_start();
 if (isset($_SESSION['username'])) {
@@ -74,14 +75,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             //register if no error
             $confirmation_code = hash("sha512", uniqid(rand()));
             if(!empty($username) && !empty($email) && !empty($password) && !empty($phone) && !empty($college))  {
-                $query = "INSERT INTO users(username,email,password,phone,college) VALUES ('$username','$email','$password','$phone','$college')";
+                $hash = uniqid(rand());
+                $query = "INSERT INTO users(username,email,password,phone,college,hash) VALUES ('$username','$email','$password','$phone','$college','$hash')";
                 $res = $con->query($query);
                 if($res)    {
-                    //Send confirmation link to email
-                    $to = $email;
-                    $subject = "Your confirmation link here";
-			        $header = "from: LCC-SJCE ";
-			        $message = "";
+                    try {
+                        //Recipients
+                        $mail->setFrom('open.weavers@linuxmail.org', 'hack_it, LCC SJCE');
+                        $mail->addAddress($email);               // Name is optional
+
+                        //Content
+                        $mail->isHTML(true);                                  // Set email format to HTML
+                        $mail->Subject = 'Account Confirmation Link';
+                        $mail->Body    = 'Click on this <a href="'.$root_path.'confirm.php?m=c&u='.$username.'&h='.$hash.'"><b>link</b></a>
+                                  to confirm password change';
+                        $mail->AltBody = 'A Password recovery attempt was made on your account.Click on this link to confirm 
+                              password change in a HTML-enabled mail service';
+
+                        $mail->send();
+                    }
+                    catch (Exception $e) {
+                        echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
+                    }
                 }
             }
             else    {

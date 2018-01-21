@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.7
+-- version 4.7.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 20, 2018 at 04:20 PM
--- Server version: 10.1.30-MariaDB
--- PHP Version: 7.2.1
+-- Generation Time: Jan 21, 2018 at 06:33 AM
+-- Server version: 10.1.26-MariaDB
+-- PHP Version: 7.1.8
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -21,18 +21,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `hack_it`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `email_confirm`
---
-
-CREATE TABLE `email_confirm` (
-  `username` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `hash` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -72,21 +60,24 @@ CREATE TABLE `users` (
   `username` varchar(32) COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(128) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `phone` int(11) NOT NULL,
+  `phone` bigint(11) NOT NULL,
   `college` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `activated` int(11) NOT NULL DEFAULT '0'
+  `activated` int(11) NOT NULL DEFAULT '0',
+  `temp_pwd` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `hash` varchar(128) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`username`, `email`, `password`, `phone`, `college`, `activated`, `temp_pwd`, `hash`) VALUES
+('2', 'cesufufo@20boxme.org', 'Tgbyhnujm', 1231231231, '6', 1, 'Tgbyhnujm', '8402833795a64232448a6b'),
+('Wart', 'temproary3@gmail.com', 'qwe', 234, 'QAZ', 0, 'qwe', NULL);
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `email_confirm`
---
-ALTER TABLE `email_confirm`
-  ADD PRIMARY KEY (`username`),
-  ADD UNIQUE KEY `email` (`email`);
 
 --
 -- Indexes for table `questions`
@@ -110,13 +101,6 @@ ALTER TABLE `users`
 --
 -- Constraints for dumped tables
 --
-
---
--- Constraints for table `email_confirm`
---
-ALTER TABLE `email_confirm`
-  ADD CONSTRAINT `fk_ec_1` FOREIGN KEY (`email`) REFERENCES `users` (`email`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `fk_ec_2` FOREIGN KEY (`username`) REFERENCES `users` (`username`) ON UPDATE CASCADE;
 
 --
 -- Constraints for table `track_records`
