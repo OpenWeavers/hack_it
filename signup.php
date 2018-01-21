@@ -100,7 +100,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $query = "INSERT INTO track_records(username, current_level, total_score, current_hint_took, on_block, when_to_unblock) VALUES ('$username',0,0,0,0,'$date')";
                     $res = $con->query($query);
-                    header("location:login.php");
+                    header("location:signup_success.php");
                 }
             }
             else    {
@@ -142,6 +142,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           margin: auto;
         }
         </style>
+        <script>
+        $(document).ready(function(){
+          $(".button-collapse").sideNav();
+        });
+
+        </script>
+
     </head>
     <body>
       <nav>
@@ -150,15 +157,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">r/hack_it</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Sign Out</a></li>
+            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+            <li><a href="./about.html">About</a></li>
           </ul>
           <ul class="side-nav" id="mobile-demo">
             <li><a href="#">Leaderboard</a></li>
-            <li><a href="#">r/hack_it</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Sign Out</a></li>
+            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+            <li><a href="./about.html">About</a></li>
           </ul>
         </div>
     </nav>
