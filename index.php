@@ -45,8 +45,8 @@
                     <!-- Navigation. We hide it in small screens. -->
                     <nav class="mdl-navigation mdl-layout--large-screen-only">
                         <a class="mdl-navigation__link" href="">Leader Board</a>
-                        <a class="mdl-navigation__link" href="">r/hack_it</a>
-                        <a class="mdl-navigation__link" href="">About</a>
+                        <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/">r/hack_it</a>
+                        <a class="mdl-navigation__link" href="./about.html">About</a>
                         <a class="mdl-navigation__link" href="">Sign In</a>
                     </nav>
                 </div>
@@ -55,8 +55,8 @@
                 <span class="mdl-layout-title">Username here</span>
                 <nav class="mdl-navigation">
                     <a class="mdl-navigation__link" href="">Leader Board</a>
-                    <a class="mdl-navigation__link" href="">r/hack_it</a>
-                    <a class="mdl-navigation__link" href="">About</a>
+                    <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/">r/hack_it</a>
+                    <a class="mdl-navigation__link" href="./about.html">About</a>
                     <a class="mdl-navigation__link" href="">Sign In</a>
                 </nav>
             </div>

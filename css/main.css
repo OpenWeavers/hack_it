@@ -289,3 +289,16 @@ textarea {
         page-break-after: avoid;
     }
 }
+/*for qpage.html*/
+nav{
+  background-color: rgb(0,150,136);
+}
+#ques form{
+      display: inline-block;
+      position: fixed;
+      left: 0;
+      right: 0;
+      margin: auto;
+      border: 1px solid rgb(0,150,136);
+      padding: 5%;
+}
