@@ -303,14 +303,7 @@ nav{
       padding: 5%;
 }
 
-.sidebarLink{
-    color: white;
-}
 
-.sidebarLink:hover{
-    text-decoration: none;
-    color : #009688;
-}
 /*For lboard.html*/
 #lbrd > table > caption{
   font-weight: bold;
@@ -318,4 +311,16 @@ nav{
 }
 #lbrd td,#lbrd th{
   text-align: center;
+}
+
+.mdl-layout__drawer span.mdl-layout-title {
+    background: white;
+
+}
+.mdl-layout__drawer a.mdl-navigation__link {
+    color: white;
+
+}
+.mdl-layout__drawer a.mdl-navigation__link:hover {
+    color: #009688; !important;
 }

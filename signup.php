@@ -121,7 +121,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>SignUp</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            $(document).ready(function(){
+                $(".button-collapse").sideNav();
+            });
 
+        </script>
         <link rel="manifest" href="site.webmanifest">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -193,11 +198,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="email" data-error="wrong" data-success="right">Email</label>
         </div>
           <div class="input-field col s12">
+              <i class="material-icons prefix">school</i>
               <input name="college" id="college" type="text" class="validate">
               <label for="college">College Name</label>
           </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
+        <button class="btn waves-effect waves-light right" type="submit" name="action"><i class="material-icons right">send</i>
+            Submit
         </button>
       </div>
     </form>

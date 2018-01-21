@@ -55,7 +55,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Log In</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <script>
+            $(document).ready(function(){
+                $(".button-collapse").sideNav();
+            });
 
+        </script>
         <link rel="manifest" href="site.webmanifest">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
