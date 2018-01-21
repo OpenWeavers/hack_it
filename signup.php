@@ -151,9 +151,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </head>
     <body>
-    <?php
-    include ("header.php");
-    ?>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Hack_It</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="#">Leaderboard</a></li>
+            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+            <li><a href="./about.html">About</a></li>
+          </ul>
+        </div>
+    </nav>
       &nbsp; &nbsp;
     <div class="row" id="sgnupform">
 

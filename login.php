@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $_SESSION['on_block'] = $r1['on_block'];
                 $_SESSION['when_to_unblock'] = $r1['when_to_unblock'];
             }
-            header("location:levels/".$_SESSION['current_level'].".php");
+            header("levels/{$_SESSION['current_level']}.php");
         }
 
         //handle login error
@@ -85,10 +85,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>
     </head>
     <body>
-    <?php
-    include ("header.php");
-    ?>
-      &nbsp; &nbsp;
+    <nav>
+        <div class="nav-wrapper">
+            <ul id="slide-out" class="side-nav">
+
+                <li><a href="#!">Leader Board</a></li>
+                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo">hack_it</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#!">Leader Board</a></li>
+                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    &nbsp; &nbsp;
     <div class="row" id="login">
 
     <form class="col s6" action="login.php" method="POST">

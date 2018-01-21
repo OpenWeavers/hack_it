@@ -1,8 +1,3 @@
-<html>
-<body>
-<?php
-include ("header.php");
-?>
 <?php
 require 'variables.php';
 require 'com/config/DBHelper.php';
@@ -62,5 +57,3 @@ if ($result->num_rows == 1 and $r['hash'] == $hash) {
     echo "Thank You!<br>";
 }
 ?>
-</body>
-</html>
