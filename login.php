@@ -85,23 +85,24 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>
     </head>
     <body>
-      <nav>
+    <nav>
         <div class="nav-wrapper">
-          <a href="#!" class="brand-logo">&nbsp;hack_It</a>
-          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
-          <ul class="right hide-on-med-and-down">
-            <li><a href="#">Leaderboard</a></li>
-            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="./about.html">About</a></li>
-          </ul>
-          <ul class="side-nav" id="mobile-demo">
-            <li><a href="#">Leaderboard</a></li>
-            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="./about.html">About</a></li>
-          </ul>
+            <ul id="slide-out" class="side-nav">
+
+                <li><a href="#!">Leader Board</a></li>
+                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+            <a href="#" class="brand-logo">hack_it</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="#!">Leader Board</a></li>
+                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
         </div>
     </nav>
-      &nbsp; &nbsp;
+    &nbsp; &nbsp;
     <div class="row" id="login">
 
     <form class="col s6" action="login.php" method="POST">
@@ -116,10 +117,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input id="password" name="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
-        <button class="btn waves-effect waves-light" type="submit" name="action">LogIn
+          <button class="btn waves-effect waves-light right-align-align" type="submit" name="action" style="float: right" >LogIn
           <i class="fa fa-sign-in right" aria-hidden="true"></i>
         </button>
-      </div>
+        </div>
     </form>
   </body>
 </html>
