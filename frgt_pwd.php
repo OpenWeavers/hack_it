@@ -19,6 +19,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     $email = test_input($_POST['email']);
     $password = test_input($_POST['password']);
+    $password = hash("sha512", $password);
 
     $q1 = "SELECT * FROM `users` WHERE email='$email'";
 
