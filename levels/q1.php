@@ -4,8 +4,8 @@ session_start();
 if (!isset($_SESSION['username']))  {
     header("location:../index.php");
 }
-if ($_SESSION['current_level'] != 1) {
-    header("location:" . $_SESSION['current_level'] . "php");
+if (isset($_SESSION['username']) && $_SESSION['current_level'] != 1) {
+    header("location:" . $_SESSION['current_level'] . ".php");
 }
 
 ?>

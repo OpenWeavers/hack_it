@@ -2,9 +2,8 @@
 require 'com/config/DBHelper.php';
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location:levels/".$_SESSION['current_level']."php");
+    header("location:levels/".$_SESSION['current_level'].".php");
 }
-
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -99,15 +98,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       &nbsp; &nbsp;
     <div class="row" id="login">
 
-    <form class="col s6">
+    <form class="col s6" action="login.php" method="POST">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
-          <label for="icon_prefix">Username</label>
+          <input id="username" name="username" type="text" class="validate">
+          <label for="username">Username</label>
         </div>
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input id="password" name="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">LogIn
@@ -115,6 +114,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </button>
       </div>
     </form>
-  </div>
   </body>
 </html>

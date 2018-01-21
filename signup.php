@@ -3,7 +3,7 @@ require 'mailer.php';
 require 'com/config/DBHelper.php';
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location:/".$_SESSION['current_level']."php");
+    header("location:/".$_SESSION['current_level'].".php");
 }
 
 function test_input($data) {
@@ -88,15 +88,19 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $mail->isHTML(true);                                  // Set email format to HTML
                         $mail->Subject = 'Account Confirmation Link';
                         $mail->Body    = 'Click on this <a href="'.$root_path.'confirm.php?m=c&u='.$username.'&h='.$hash.'"><b>link</b></a>
-                                  to confirm password change';
-                        $mail->AltBody = 'A Password recovery attempt was made on your account.Click on this link to confirm
-                              password change in a HTML-enabled mail service';
+                                  to activate your hack_it account.';
+                        $mail->AltBody = 'A hack_it account was created using this email.Click on this link to confirm activation';
 
                         $mail->send();
                     }
                     catch (Exception $e) {
                         echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
                     }
+                    $date = date('Y-m-d H:i:s');
+
+                    $query = "INSERT INTO track_records(username, current_level, total_score, current_hint_took, on_block, when_to_unblock) VALUES ('$username',0,0,0,0,'$date')";
+                    $res = $con->query($query);
+                    header("location:login.php");
                 }
             }
             else    {
@@ -160,28 +164,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       &nbsp; &nbsp;
     <div class="row" id="sgnupform">
 
-    <form class="col s6">
+    <form class="col s6" action="signup.php" method="post">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input id="icon_prefix" type="text" class="validate">
+          <input name="username" id="icon_prefix" type="text" class="validate">
           <label for="icon_prefix">Username</label>
         </div>
         <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
+          <input name="password" id="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
-          <input id="icon_telephone" type="tel" class="validate">
+          <input name="phone" id="icon_telephone" type="tel" class="validate">
           <label for="icon_telephone">Telephone</label>
         </div>
         <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
+          <input name="email" id="email" type="email" class="validate">
           <label for="email" data-error="wrong" data-success="right">Email</label>
         </div>
           <div class="input-field col s12">
-              <input id="college" type="text" class="validate">
+              <input name="college" id="college" type="text" class="validate">
               <label for="college">College Name</label>
           </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
