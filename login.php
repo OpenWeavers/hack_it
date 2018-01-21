@@ -112,6 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <label for="username">Username</label>
         </div>
         <div class="input-field col s12">
+            <i class="material-icons prefix">lock</i>
           <input id="password" name="password" type="password" class="validate">
           <label for="password">Password</label>
         </div>
