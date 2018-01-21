@@ -1,4 +1,4 @@
-<!doctype html> 
+<!doctype html>
 <html lang="">
     <head>
         <meta charset="utf-8">
@@ -18,12 +18,13 @@
         <link rel="stylesheet" href="css/main.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script type="text/javascript" src="js/materialize.min.js"></script>
+        <script>
+        $(document).ready(function(){
+          $(".button-collapse").sideNav();
+        });
+
+        </script>
     </head>
-    <script>
-    $( document ).ready(function(){
-      $(".button-collapse").sideNav();
-    });
-    </script>
     <body>
         <!--[if lte IE 9]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
@@ -37,13 +38,13 @@
                 <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                 <ul class="right hide-on-med-and-down">
                   <li><a href="#">Leaderboard</a></li>
-                  <li><a href="#">r/hack_it</a></li>
+                  <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
                   <li><a href="#">Level No</a></li>
                   <li><a href="#">Sign Out</a></li>
                 </ul>
                 <ul class="side-nav" id="mobile-demo">
                   <li><a href="#">Leaderboard</a></li>
-                  <li><a href="#">r/hack_it</a></li>
+                  <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
                   <li><a href="#">Level No.</a></li>
                   <li><a href="#">Sign Out</a></li>
                 </ul>
