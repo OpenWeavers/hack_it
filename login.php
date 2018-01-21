@@ -55,12 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <title>Log In</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <script>
-            $(document).ready(function(){
-                $(".button-collapse").sideNav();
-            });
 
-        </script>
         <link rel="manifest" href="site.webmanifest">
         <!-- Place favicon.ico in the root directory -->
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
@@ -90,23 +85,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </script>
     </head>
     <body>
-    <nav>
-        <div class="nav-wrapper">
-            <ul id="slide-out" class="side-nav">
+      <nav>
+            <div class="nav-wrapper">
+              <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+              <a href="#" class="brand-logo">hack_it</a>
+                <ul id="slide-out" class="side-nav">
 
-                <li><a href="#!">Leader Board</a></li>
-                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-            <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-            <a href="#" class="brand-logo">hack_it</a>
-            <ul id="nav-mobile" class="right hide-on-med-and-down">
-                <li><a href="#!">Leader Board</a></li>
-                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-                <li><a href="about.html">About</a></li>
-            </ul>
-        </div>
-    </nav>
+                    <li><a href="./lboard.html">LeaderBoard</a></li>
+                    <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="./lboard.html">Leader Board</a></li>
+                    <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
     &nbsp; &nbsp;
     <div class="row" id="login">
 
