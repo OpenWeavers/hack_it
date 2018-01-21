@@ -45,50 +45,48 @@
                     <!-- Navigation. We hide it in small screens. -->
                     <nav class="mdl-navigation mdl-layout--large-screen-only">
                         <a class="mdl-navigation__link" href="">Leader Board</a>
-                        <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/">r/hack_it</a>
+                        <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/"  target="_blank">r/hack_it</a>
                         <a class="mdl-navigation__link" href="./about.html">About</a>
-                        <a class="mdl-navigation__link" href="">Sign In</a>
+                        <a class="mdl-navigation__link" href="./login.php">Sign In</a>
                     </nav>
                 </div>
             </header>
-            <div class="mdl-layout__drawer">
-                <span class="mdl-layout-title">Username here</span>
+            <div class="mdl-layout__drawer" style="background: #009688">
+                <span class="mdl-layout-title" style="color: white">Welcome!</span>
+                <style>
+                    a:hover {
+                        color: #009688;
+                    }
+
+                </style>
                 <nav class="mdl-navigation">
-                    <a class="mdl-navigation__link" href="">Leader Board</a>
-                    <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/">r/hack_it</a>
-                    <a class="mdl-navigation__link" href="./about.html">About</a>
-                    <a class="mdl-navigation__link" href="">Sign In</a>
+                    <a class="mdl-navigation__link" style="color: white" href="./login.php">Sign In</a>
+                    <a class="mdl-navigation__link" style="color: white" href="">Leader Board</a>
+                    <a class="mdl-navigation__link" style="color: white" href="https://www.reddit.com/r/hack_it/"  target="_blank">r/hack_it</a>
+                    <a class="mdl-navigation__link" style="color: white" href="./about.html">About</a>
+
                 </nav>
             </div>
             <main class="mdl-layout__content">
                 <div class="page-content">
-
-
-                        <div class="row">
-                            <div class=" col s6 m6" style="position: relative;">
-                                <object width="800" height="800" data="./404.html" style="margin: 0 auto; position: absolute; top: 50%; transform: translateY(+5%);" class="responsive"></object>
+                    &nbsp;&nbsp;
+                    <div class="row" align="center">
+                        <!-- Wide card with share menu button -->
+                        <div class="demo-card-wide mdl-card mdl-shadow--2dp col s6 m6" style="position: relative;">
+                            <div class="mdl-card__title">
+                                <h2 class="mdl-card__title-text" style="color: black">Welcome</h2>
                             </div>
-                            <div class="row">
-                                <!-- Wide card with share menu button -->
-
-
-
-                                <div class="demo-card-wide mdl-card mdl-shadow--2dp col s6 m6" style="position: relative;">
-                                    <div class="mdl-card__title">
-                                        <h2 class="mdl-card__title-text" style="color: black">Welcome</h2>
-                                    </div>
-                                    <div class="mdl-card__supporting-text">
-                                        An Online Event, that is as simple as just filling text in an Input Field, but involves a lot of tweaks and hacks of varying difficulty to get to the answer. The questions will be framed such that, the participants will gain good amount of basic hacking skills and also an exposure to places to get started with such stuff and also some cryptic puzzles.
-                                    </div>
-                                    <div class="mdl-card__actions mdl-card--border">
-                                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-                                            Sign Up
-                                        </a>
-                                    </div>
-                                </div></div>
-
+                            <div class="mdl-card__supporting-text">
+                                An Online Event, that is as simple as just filling text in an Input Field, but involves a lot of tweaks and hacks of varying difficulty to get to the answer. The questions will be framed such that, the participants will gain good amount of basic hacking skills and also an exposure to places to get started with such stuff and also some cryptic puzzles.
+                            </div>
+                            <div class="mdl-card__actions mdl-card--border">
+                                <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="signup.php">
+                                    Sign Up
+                                </a>
+                            </div>
                         </div>
                     </div>
+                </div>
             </main>
         </div>
 

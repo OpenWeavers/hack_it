@@ -302,3 +302,12 @@ nav{
       border: 1px solid rgb(0,150,136);
       padding: 5%;
 }
+
+.sidebarLink{
+    color: white;
+}
+
+.sidebarLink:hover{
+    text-decoration: none;
+    color : #009688;
+}
