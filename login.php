@@ -91,12 +91,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <a href="#" class="brand-logo">hack_it</a>
                 <ul id="slide-out" class="side-nav">
 
-                    <li><a href="./lboard.html">LeaderBoard</a></li>
+                    <li><a href="lboard.php">LeaderBoard</a></li>
                     <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
                 <ul id="nav-mobile" class="right hide-on-med-and-down">
-                    <li><a href="./lboard.html">Leader Board</a></li>
+                    <li><a href="lboard.php">Leader Board</a></li>
                     <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
                     <li><a href="about.html">About</a></li>
                 </ul>
