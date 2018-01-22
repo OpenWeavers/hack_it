@@ -18,6 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $db = new DBHelper();
         $con = $db->getConnection();
         $error_flag = false;
+        $e = 0;
 
         $username = test_input(filter_input(INPUT_POST, 'username'));
         $password = test_input(filter_input(INPUT_POST, 'password', FILTER_SANITIZE_SPECIAL_CHARS));
@@ -33,6 +34,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $password = hash("sha512", $password);
 
+        if(!preg_match("/^[a-zA-Z0-9 ]*$/",$username)) {
+            $usernameError = "Only letters, white space and numbers allowed in username";
+            $error_flag = true;
+        }
+        else    {
+            $query = "SELECT username FROM users WHERE username='$username'";
+            $res = $con->query($query);
+            $r = $res->fetch_assoc();
+            if(!empty($r['username']) && $r['username']==$username){
+                $usernameError = "Username already in use.";
+                $error_flag = true;
+                $e = 1;
+            }
+        }
+
         if(!filter_var($email, FILTER_VALIDATE_EMAIL))  {
             $emailError = "Invalid email format";
             $error_flag = true;
@@ -44,36 +60,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if(!empty($r['email']) && $r['email']==$email){
 				$emailError = "Email is already registered.";
 				$error_flag = true;
+				$e = $e?3:2;
 			}
-        }
-
-        if(!preg_match("/^[a-zA-Z0-9 ]*$/",$username)) {
-            $usernameError = "Only letters, white space and numbers allowed in username";
-            $error_flag = true;
-        }
-        else    {
-            $query = "SELECT username FROM users WHERE username='$username'";
-            $res = $con->query($query);
-            $r = $res->fetch_assoc();
-            if(!empty($r['username']) && $r['username']==$username){
-				$usernameError = "Username already in use.";
-				$error_flag = true;
-			}
-        }
-
-        if(!preg_match("/^[0-9]*$/",$phone)) {
-            $phoneError = "Enter valid phone number";
-            $error_flag = true;
-        }
-
-        if(!preg_match("/^[a-zA-Z ]*$/",$college)) {
-            $collegeError = "Only letters and white space allowed";
-            $error_flag = true;
         }
 
         if($error_flag == false)    {
             //register if no error
-            $confirmation_code = hash("sha512", uniqid(rand()));
+            //$confirmation_code = hash("sha512", uniqid(rand()));
             if(!empty($username) && !empty($email) && !empty($password) && !empty($phone) && !empty($college))  {
                 $hash = uniqid(rand());
                 $query = "INSERT INTO users(username,email,password,phone,college,hash) VALUES ('$username','$email','$password','$phone','$college','$hash')";
@@ -141,12 +134,77 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           right: 0;
           margin: auto;
         }
+        .error {color: #ff0000;}
         </style>
         <script>
         $(document).ready(function(){
           $(".button-collapse").sideNav();
         });
+        </script>
+        <script>
+        function validateForm() {
+            console.log(1);
+            var pat = "";
+            var flag = true;
 
+            x = document.getElementById("username").value;
+            pat = /^[a-zA-Z0-9 ]{3,}$/;
+            if(pat.test(x)) {
+                document.getElementById('usernameE').innerHTML = '';
+            }
+            else {
+                flag = false;
+                document.getElementById('usernameE').innerHTML =
+                    'Only alphabets, numbers and whitespaces allowed (Minimum: 3)';
+            }
+
+            x = document.getElementById("password").value;
+            pat = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@!%*#?&])[A-Za-z\d$@!%*#?&]{8,}$/;
+            if(pat.test(x)) {
+                document.getElementById('passwordE').innerHTML = '';
+            }
+            else {
+                flag = false;
+                document.getElementById('passwordE').innerHTML =
+                    'Minimum eight characters(at least one letter, one number and one special character)';
+            }
+
+            x = document.getElementById('phone').value;
+            pat = /^\d{10}$/;
+            if(pat.test(x)) {
+                document.getElementById('phoneE').innerHTML = '';
+            }
+            else {
+                flag = false;
+                document.getElementById('phoneE').innerHTML =
+                    'Only (ten) numbers allowed';
+            }
+
+            x = document.getElementById('email').value;
+            pat = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            if(pat.test(x)) {
+                document.getElementById('emailE').innerHTML = '';
+            }
+            else {
+                flag = false;
+                document.getElementById('emailE').innerHTML =
+                    'Invalid email format';
+            }
+
+            x = document.getElementById('college').value;
+            pat = /^[a-zA-Z]{2,}$/;
+            if(pat.test(x)) {
+                document.getElementById('collegeE').innerHTML = '';
+            }
+            else {
+                flag = false;
+                document.getElementById('collegeE').innerHTML =
+                    'Invalid college name';
+            }
+
+            return flag;
+
+        }
         </script>
 
     </head>
@@ -170,31 +228,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       &nbsp; &nbsp;
     <div class="row" id="sgnupform">
 
-    <form class="col s6" action="signup.php" method="post">
+    <form class="col s6" action="signup.php" onsubmit="return validateForm()" method="post">
       <div class="row">
         <div class="input-field col s12">
           <i class="material-icons prefix">account_circle</i>
-          <input name="username" id="icon_prefix" type="text" class="validate">
+          <input name="username" id="username" type="text" class="validate" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $e != 1 && $e != 3) echo $_POST["username"];?>" required>
+            <span id="usernameE" class="error"><?php if($_SERVER["REQUEST_METHOD"] == "POST" && ($e == 1 || $e == 3))
+            { echo "Username already exists. Try another one."; }?></span>
           <label for="icon_prefix">Username</label>
         </div>
         <div class="input-field col s12">
             <i class="material-icons prefix">lock</i>
-          <input name="password" id="password" type="password" class="validate">
+          <input name="password" id="password" type="password" class="validate" required>
+            <span id="passwordE" class="error"></span>
           <label for="password">Password</label>
         </div>
         <div class="input-field col s12">
           <i class="material-icons prefix">phone</i>
-          <input name="phone" id="icon_telephone" type="tel" class="validate">
+          <input name="phone" id="phone" type="tel" class="validate" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_POST["phone"];?>" required>
+            <span id="phoneE" class="error"></span>
           <label for="icon_telephone">Telephone</label>
         </div>
         <div class="input-field col s12">
             <i class="material-icons prefix">email</i>
-          <input name="email" id="email" type="email" class="validate">
+          <input name="email" id="email" type="email" class="validate" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $e != 2 && $e != 3) echo $_POST["email"];?>" required>
+            <span id="emailE" class="error"><?php if($_SERVER["REQUEST_METHOD"] == "POST" && ($e == 2 || $e == 3))
+                { echo "Email already exists. Try another one."; }?></span>
           <label for="email" data-error="wrong" data-success="right">Email</label>
         </div>
           <div class="input-field col s12">
               <i class="material-icons prefix">school</i>
-              <input name="college" id="college" type="text" class="validate">
+              <input name="college" id="college" type="text" class="validate" value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_POST["college"];?>" required>
+              <span id="collegeE" class="error"></span>
               <label for="college">College Name</label>
           </div>
         <button class="btn waves-effect waves-light right" type="submit" name="action"><i class="material-icons right">send</i>
