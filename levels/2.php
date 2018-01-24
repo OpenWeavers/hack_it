@@ -79,13 +79,11 @@ if ($_SESSION['on_block'] == $level) {
 </nav>
 <div class="row" id="ques">
     <form class="col s6" action="answer_verification.php" method="post">
-
         <div class="row">
-            <!--Put Question Content Here!-->
             <div class="input-field col s12">
-                <input name="answer" id="input1" class="input-field inline" type="text">
+                <input name="answer" id="textarea1" class="input-field inline" type="text">
                 <br />
-                <label for="input1">Answer</label>
+                <label for="textarea1">Answer</label>
             </div>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
