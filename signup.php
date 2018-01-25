@@ -3,7 +3,7 @@ require 'mailer.php';
 require 'com/config/DBHelper.php';
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location:/".$_SESSION['current_level'].".php");
+    header("location:levels/".$_SESSION['current_level'].".php");
 }
 
 function test_input($data) {
