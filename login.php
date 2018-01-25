@@ -41,7 +41,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
             header("location:levels/".$_SESSION['current_level'].".php");
         }
-
+        $login_error = "Incorrect username or password";
         //handle login error
     }
 }
@@ -121,6 +121,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <i class="fa fa-sign-in right" aria-hidden="true"></i>
         </button>
         </div>
+        <div><?php echo $login_error?></div>
     </form>
   </body>
 </html>
