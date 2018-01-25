@@ -214,7 +214,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <nav>
     <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">hack_it</a>
+        <a href="#!" class="brand-logo">&nbsp;&nbsp;hack_it</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="lboard.php">Leaderboard</a></li>
@@ -231,7 +231,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 &nbsp; &nbsp;
 <div class="row" id="sgnupform">
 
-    <form class="col s6" action="signup.php" onsubmit="return validateForm()" method="post">
+    <form class="col m6 s12" action="signup.php" onsubmit="return validateForm()" method="post">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>
