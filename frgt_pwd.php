@@ -1,6 +1,33 @@
 <html>
+<head>
+    <style>
+        .error {color : red;}
+    </style>
+</head>
 <body>
+<script>
+    function check() {
+        var x = document.getElementById('password1').value;
+        var y = document.getElementById('password2').value;
 
+        pat = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@!%*#?&])[A-Za-z\d$@!%*#?&]{8,}$/;
+        if (!pat.test(x)) {
+            document.getElementById('passwordE').innerHTML =
+                'Password must be atleast minimum eight characters(at least one letter, one number and one special character)';
+            return false;
+        }
+
+        if(x == y) {
+            document.getElementById('passwordE').innerHTML = "";
+            return true;
+        }
+        else {
+            document.getElementById('passwordE').innerHTML = "";
+            document.getElementById('passwordE').innerHTML = "Passwords do not match.<br>Try Again!";
+            return false;
+        }
+    }
+</script>
 <?php
 
 require 'mailer.php';
@@ -70,14 +97,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 } else {
     echo '
     <h3 > Enter Email - ID for which password reset is required:</h3 >
-    <form action = "' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method = "post" >
+    <form action = "' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method = "post" onsubmit="return check()">
         <input id = "email" name = "email" type = "email" placeholder = "Email-ID" required ><br >
-        <input id = "password" name = "password" type = "password" placeholder = "Password" required ><br >
+        <input id = "password1" name = "password" type = "password" placeholder = "New Password" required ><br>
+        <input id = "password2" name = "password" type = "password" placeholder = "Confirm New Password" required ><br>
         <button type = "submit" > Reset Password </button >
-    </form >';
+    </form >
+    <span class="error" id="passwordE"></span> ';
 }
 
-echo '
-</body >
-</html>';
 ?>
+</body >
+</html>
