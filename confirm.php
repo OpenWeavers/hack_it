@@ -29,7 +29,7 @@ $r = $result->fetch_assoc();
 
 if ($result->num_rows == 1 and $r['hash'] == $hash) {
     if ($mode == 'c') {
-        $q2 = "UPDATE `users` SET activated=1 WHERE username=$username";
+        $q2 = "UPDATE `users` SET activated=1 WHERE username='$username'";
         if ($conn->query($q2) == false) {
             //die($conn->connect_error);
             die("Error occured while confirming link.<br>Try Again.");
@@ -38,7 +38,7 @@ if ($result->num_rows == 1 and $r['hash'] == $hash) {
             echo '<a href="login.php"><b>Login</b></a>';
         }
     } else if ($mode == 'r') {
-        $q2 = "UPDATE `users` SET password=temp_pwd WHERE username=$username";
+        $q2 = "UPDATE `users` SET password=temp_pwd WHERE username='$username'";
         if ($conn->query($q2) == false) {
             //die($conn->connect_error);
             die("Error occured while resetting password.<br>Try Again.");
