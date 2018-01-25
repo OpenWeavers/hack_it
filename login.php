@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <nav>
     <div class="nav-wrapper">
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-        <a href="#" class="brand-logo">hack_it</a>
+        <a href="#" class="brand-logo">&nbsp;&nbsp;hack_it</a>
         <ul id="slide-out" class="side-nav">
 
             <li><a href="lboard.php">LeaderBoard</a></li>
@@ -112,7 +112,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 &nbsp; &nbsp;
 <div class="row" id="login">
 
-    <form class="col s6" action="login.php" method="POST">
+    <form class="col m6 s12" action="login.php" method="POST">
         <div class="row">
             <div class="input-field col s12">
                 <i class="material-icons prefix">account_circle</i>

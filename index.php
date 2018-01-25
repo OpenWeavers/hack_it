@@ -16,7 +16,8 @@
         <link rel="stylesheet" href="css/main.css">
         <style>
             .demo-card-wide.mdl-card {
-                width: 512px;
+                max-width: 512px;
+                width: 80%;
             }
             .demo-card-wide > .mdl-card__title {
                 color: #fff;
@@ -25,6 +26,9 @@
             }
             .demo-card-wide > .mdl-card__menu {
                 color: #fff;
+            }
+            .mdl-card__supporting-text{
+                font-size: 15px;
             }
         </style>
     </head>
@@ -58,7 +62,7 @@
                 </style>
                 <nav class="mdl-navigation" style="background-color: white">
                     <a class="mdl-navigation__link " href="./login.php">Sign In</a>
-                    <a class="mdl-navigation__link"  href="lboard.php">Leader Board</a>
+                    <a class="mdl-navigation__link"  href="./lboard.php">Leader Board</a>
                     <a class="mdl-navigation__link"  href="https://www.reddit.com/r/hack_it/"  target="_blank">r/hack_it</a>
                     <a class="mdl-navigation__link"  href="./about.html">About</a>
 
@@ -69,7 +73,7 @@
                     &nbsp;&nbsp;
                     <div class="row" align="center">
                         <!-- Wide card with share menu button -->
-                        <div class="demo-card-wide mdl-card mdl-shadow--2dp col s6 m6" style="position: relative;">
+                        <div class="demo-card-wide mdl-card mdl-cell mdl-cell--12-col mdl-cell--4-col-tablet mdl-shadow--2dp col s6 m6" style="position: relative;">
                             <div class="mdl-card__title">
                                 <h2 class="mdl-card__title-text" style="color: black" align="left">Welcome</h2>
                             </div>
