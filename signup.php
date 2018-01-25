@@ -3,7 +3,7 @@ require 'mailer.php';
 require 'com/config/DBHelper.php';
 session_start();
 if (isset($_SESSION['username'])) {
-    header("location:levels/".$_SESSION['current_level'].".php");
+    header("location:levels/" . $_SESSION['current_level'] . ".php");
 }
 
 function test_input($data)
@@ -146,7 +146,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </script>
     <script>
         function validateForm() {
-            console.log(1);
             var pat;
             var flag = true;
 
