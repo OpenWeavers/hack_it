@@ -91,7 +91,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     }
                     $date = date('Y-m-d H:i:s');
 
-                    $query = "INSERT INTO track_records(username, current_level, total_score, current_hint_took, on_block, when_to_unblock) VALUES ('$username',0,0,0,0,'$date')";
+                    $query = "INSERT INTO track_records(username, current_level, total_score, current_hint_took, on_block, when_to_unblock, last_success) VALUES ('$username',0,0,0,0,'$date','$date')";
                     $res = $con->query($query);
                     header("location:signup_success.php");
                 }

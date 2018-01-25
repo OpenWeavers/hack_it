@@ -41,8 +41,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
                 $total_score = $total_score - 5; // assuming 5 is hint penalty
             }
             $current_level = $current_level + 1;
+            $last_success = date('Y-m-d H:i:s');
             //Reflect in DB
-            $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0 WHERE username='$username'";
+            $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0,last_success='$last_success' WHERE username='$username'";
             $con->query($query);
 
             //Now handle session variables!
