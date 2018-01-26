@@ -1,9 +1,5 @@
 <?php
 require 'com/config/DBHelper.php';
-session_start();
-if (!isset($_SESSION['username'])) {
-    header("location:./index.php");
-}
 $db = new DBHelper();
 $con = $db->getConnection();
 
