@@ -37,9 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
             $current_hint_took = $r['current_hint_took'];
             $total_score = $r['total_score'];
             $total_score = $total_score + $points;
-            if ($current_hint_took == 1)  {
-                $total_score = $total_score - 5; // assuming 5 is hint penalty
-            }
+
             $current_level = $current_level + 1;
             $last_success = date('Y-m-d H:i:s');
             //Reflect in DB
@@ -50,7 +48,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
             $_SESSION['current_level'] = $current_level;
             $_SESSION['total_score'] = $total_score;
             $_SESSION['current_hint_took'] = 0;
-
+            if ($current_hint_took == 1)  {
+                //redirect to wait page
+                header("location:blocked.php");
+            }
             header("location:".$_SESSION['current_level'].".php");
         }
         else    {
