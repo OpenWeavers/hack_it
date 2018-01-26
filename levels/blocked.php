@@ -11,7 +11,7 @@ if (isset($_SESSION['username'])) {
     else    {
         $now = date('Y-m-d H:i:s');
         $time_to_unblock = date($_SESSION['when_to_unblock']);
-        if ($time_to_unblock < $now) {
+        if ($time_to_unblock <= $now) {
         $db = new DBHelper();
         $con = $db->getConnection();
         $username = $_SESSION['username'];
