@@ -92,7 +92,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         $res = $con->query($query);
                         header("location:signup_success.php");
                     }
-                } catch (Exception $e) {
+                } catch (Exception $e1) {
                     echo 'Message could not be sent. Mailer Error: ', $mail->ErrorInfo;
                 }
 
