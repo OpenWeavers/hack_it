@@ -1,0 +1,70 @@
+<html lang="">
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      <title>Wait</title>
+      <meta name="description" content="">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <link rel="manifest" href="site.webmanifest">
+      <!-- Place favicon.ico in the root directory -->
+      <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+      <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css"/>
+      <link rel="stylesheet" href="css/flipclock.css">
+      <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+      <!--<link rel="stylesheet" href="css/materialize.css" >-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+      <link rel="stylesheet" href="css/main.css">
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <script src="js/flipclock.js"></script>
+  </head>
+  <body>
+    <body>
+    <nav>
+        <div class="nav-wrapper">
+            <a href="#!" class="brand-logo">&nbsp;&nbsp;hack_it</a>
+            <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a href="lboard.php">Leaderboard</a></li>
+                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+            <ul class="side-nav" id="mobile-demo">
+                <li><a href="lboard.php">Leaderboard</a></li>
+                <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="row">
+    <div id="wait">
+      As you have used a hint please wait.<br><br><br><br><span class="clock"></span><br><br><br><br>
+      <a href="wpage.html"> Click here</a> to refresh
+    </div>
+  </div>
+    <script type="text/javascript">
+			var clock;
+
+			$(document).ready(function() {
+
+				// Grab the current date
+				var currentDate = new Date();
+
+				// Set some date in the future. In this case, it's always Jan 1
+				var futureDate  = new Date(2018,00,26,16,28,30,0);
+//        console.log(futureDate);
+				// Calculate the difference in seconds between the future and current date
+				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
+
+				// Instantiate a coutdown FlipClock
+        var clock = $('.clock').FlipClock(diff, {
+      		clockFace: 'MinuteCounter',
+      		countdown: true,
+      	});
+			});
+		</script>
+
+  </body>
+</html>
