@@ -60,13 +60,16 @@ if($res = $con->query( $query)) {
     </div>
 </nav>
 <div class="row" id="lbrd">
-    <table class="highlight">
+    <table class="striped">
         <caption>LeaderBoard</caption>
+        <thead>
         <tr>
             <th>Position</th>
             <th>Username</th>
             <th>Total Score</th>
         </tr>
+        </thead>
+        <tbody>
         <?php
         for($i=0;$i<sizeof($data);$i++) {
             echo "<tr>";
@@ -76,6 +79,7 @@ if($res = $con->query( $query)) {
             echo "</tr>";
         }
         ?>
+        </tbody>
     </table>
 </div>
 </body>
