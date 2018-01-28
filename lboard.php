@@ -3,12 +3,13 @@ require 'com/config/DBHelper.php';
 $db = new DBHelper();
 $con = $db->getConnection();
 
-$query = "SELECT username, total_score FROM `track_records` ORDER BY total_score DESC, last_success ASC";
+$query = "SELECT username, total_score, current_level FROM `track_records` ORDER BY total_score DESC, last_success ASC";
 $data = [];
 if($res = $con->query( $query)) {
     $i = 0;
     while($row = $res->fetch_assoc())   {
         $data[$i]['username'] = $row['username'];
+        $data[$i]['current_level'] = $row['current_level'];
         $data[$i]['total_score'] = $row['total_score'];
         $i++;
     }
@@ -66,7 +67,8 @@ if($res = $con->query( $query)) {
         <tr>
             <th>Position</th>
             <th>Username</th>
-            <th>Total Score</th>
+            <th>Level</th>
+            <th>Score</th>
         </tr>
         </thead>
         <tbody>
@@ -75,6 +77,7 @@ if($res = $con->query( $query)) {
             echo "<tr>";
             echo "<td>".($i+1)."</td>";
             echo "<td>".$data[$i]['username']."</td>";
+            echo "<td>".$data[$i]['current_level']."</td>";
             echo "<td>".$data[$i]['total_score']."</td>";
             echo "</tr>";
         }
