@@ -9,8 +9,9 @@ if (isset($_SESSION['username'])) {
         header("location:" . $_SESSION['current_level'] . ".php");
     }
     else    {
-        $now = date('Y-m-d H:i:s');
-        $time_to_unblock = date($_SESSION['when_to_unblock']);
+        $now = date_create('now');
+        $time_to_unblock = date_create($_SESSION['when_to_unblock']);
+        $diff = $time_to_unblock->getTimestamp() - $now->getTimestamp();
         if ($time_to_unblock <= $now) {
         $db = new DBHelper();
         $con = $db->getConnection();
@@ -64,50 +65,29 @@ if (isset($_SESSION['username'])) {
     </nav>
     <div class="row">
     <div id="wait">
-      As you have used a hint please wait.<br><br><br><br><span class="clock"></span><br><br><br><br>
-      <a href="blocked.php"> Click here</a> to refresh
+      As you have used a hint, please wait for:<br><br><br><br><span class="clock"></span><br><br><br><br>
+      <a href="blocked.php"> Click here</a> to Refresh
     </div>
   </div>
     <script type="text/javascript">
-			var clock;
+        $(document).ready(function () {
+            var diff = '<?php echo $diff; ?>';
+            if (diff > 0) {
+                // Instantiate a coutdown FlipClock
+                var clock = $('.clock').FlipClock(diff, {
+                    clockFace: 'MinuteCounter',
+                    countdown: true,
+                    stop: function () {
+                        $("#wait").hide();
+                        window.location.href = "<?php echo $_SESSION['current_level'] . ".php" ?>";
+                    }
+                });
+            }
+            else {
+                window.location.href = "<?php echo $_SESSION['current_level'] . ".php" ?>";
 
-			$(document).ready(function() {
-
-				// Grab the current date
-				var now = new Date();
-				//var currentDate = new Date(now.getFullYear(),now.getUTCMonth(),now.getUTCDate(),now.getUTCHours(),now.getUTCMinutes(),now.getUTCSeconds());
-				var currentDate = now;
-                console.log(currentDate);
-				// Set some date in the future. In this case, it's always Jan 1
-                var fDate = "<?php echo $_SESSION['when_to_unblock'];?>";
-                console.log(fDate);
-                var arr = fDate.toString().split(" ");
-                var y = arr[0].split("-");
-                var t = arr[1].split(":");
-
-                var futureDate  = new Date(Date.UTC(y[0],y[1] - 1,y[2],t[0],t[1],t[2]));
-				console.log(futureDate);
-//        console.log(futureDate);
-				// Calculate the difference in seconds between the future and current date
-				var diff = futureDate.getTime() / 1000 - currentDate.getTime() / 1000;
-        if(diff > 0){
-
-
-				// Instantiate a coutdown FlipClock
-        var clock = $('.clock').FlipClock(diff, {
-      		clockFace: 'MinuteCounter',
-      		countdown: true,
-          stop: function () {
-              $("#wait").hide();
-         window.location.href = "<?php echo $_SESSION['current_level'] . ".php" ?>";
-        }
-      	});
-      }
-      else {
-        window.location.href = "<?php echo $_SESSION['current_level'] . ".php" ?>";
-
-      }
-			});
+            }
+        });
 		</script>
 
   </body>
