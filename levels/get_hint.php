@@ -29,16 +29,17 @@ if($_SERVER['REQUEST_METHOD'] == 'POST')    {
                 $_SESSION['current_hint_took'] = $hint_took;
                 $on_block = $current_level + 1;
                 $_SESSION['on_block'] = $on_block;
-                $date = new DateTime("now");
-                $date->modify("+10 minutes");
-                $date->format("Y-m-d H:i:s");
+                $date = date_create("now");
+                date_add($date, date_interval_create_from_date_string("10 minutes"));
+                $date = date_format($date, "Y-m-d H:i:s");
                 $when_to_unblock = $date;
                 $_SESSION['when_to_unblock'] = $date;
 
                 $query = "UPDATE track_records SET when_to_unblock='$when_to_unblock',on_block='$on_block',current_hint_took='$hint_took' WHERE username='$username'";
                 $res = $con->query($query);
-                echo $hint;
             }
+
+            echo $hint;
         }
 
     }
