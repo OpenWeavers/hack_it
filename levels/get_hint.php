@@ -5,26 +5,26 @@ if (!isset($_SESSION['username'])) {
     header("location:../index.php");
 }
 
-if($_SERVER['REQUEST_METHOD'] == 'POST')    {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new DBHelper();
     $con = $db->getConnection();
     $username = $_SESSION['username'];
     $hint = '';
     $query = "SELECT current_level,current_hint_took FROM track_records WHERE username='$username'";
     $res = $con->query($query);
-    if ($r = $res->fetch_assoc())    {
+    if ($r = $res->fetch_assoc()) {
         $current_level = $r['current_level'];
         $hint_took = $r['current_hint_took'];
         $_SESSION['current_hint_took'] = $hint_took;
 
-        if($_SESSION['current_level'] == $current_level)    {
+        if ($_SESSION['current_level'] == $current_level) {
             $query = "SELECT hint FROM questions WHERE question_no='$current_level'";
             $res = $con->query($query);
-            if($r = $res->fetch_assoc())    {
+            if ($r = $res->fetch_assoc()) {
                 $hint = $r['hint'];
             }
 
-            if ($hint_took == 0)    {
+            if ($hint_took == 0) {
                 $hint_took = 1;
                 $_SESSION['current_hint_took'] = $hint_took;
                 $on_block = $current_level + 1;
