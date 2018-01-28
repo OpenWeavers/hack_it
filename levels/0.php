@@ -9,7 +9,7 @@ if (isset($_SESSION['username']) && $_SESSION['current_level'] != 0) {
 }
 $db = new DBHelper();
 $con = $db->getConnection();
-$query = "UPDATE track_records SET current_level=1";
+$query = "UPDATE track_records SET current_level=1 WHERE username='".$_SESSION['username']."'";
 $con->query($query);
 $_SESSION['current_level'] = 1;
 ?>
