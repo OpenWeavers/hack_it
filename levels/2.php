@@ -118,7 +118,6 @@ if ($_SESSION['on_block'] == $level) {
     <form class="col m6 s12" action="answer_verification.php" method="post">
 
         <div class="row">
-            <iframe class="myIframe" src="https://www.youtube.com/embed/lRs72x7Lgtc?start=34&end=65" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
             <script type="text/javascript" language="javascript">
                 $('.myIframe').css('height', $(window).height()*.5+'px');
             </script>
