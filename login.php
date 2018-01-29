@@ -137,7 +137,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Username or Password is incorrect. Try again!";
             } ?></span></div>
     </form>
-
+</div>
 
 </body>
 </html>

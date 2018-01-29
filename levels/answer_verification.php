@@ -14,7 +14,7 @@ function test_input($data)
 }
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    if (!empty($_POST['answer'])) {
+    if (isset($_SESSION['username']) && !empty($_POST['answer'])) {
         $db = new DBHelper();
         $con = $db->getConnection();
 
@@ -53,7 +53,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 //redirect to wait page
                 header("location:blocked.php");
             }
-            header("location:" . $_SESSION['current_level'] . ".php");
+            else {
+                header("location:" . $_SESSION['current_level'] . ".php");
+            }
+
         } else {
             header("location:" . $_SESSION['current_level'] . ".php?a=f");
         }

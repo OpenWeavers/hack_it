@@ -5,7 +5,7 @@ if (!isset($_SESSION['username'])) {
     header("location:../index.php");
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+if (isset($_SESSION['username']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new DBHelper();
     $con = $db->getConnection();
     $username = $_SESSION['username'];
@@ -38,7 +38,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $query = "UPDATE track_records SET when_to_unblock='$when_to_unblock',on_block='$on_block',current_hint_took='$hint_took' WHERE username='$username'";
                 $res = $con->query($query);
             }
-
             echo $hint;
         }
 

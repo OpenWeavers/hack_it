@@ -133,6 +133,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             left: 0;
             right: 0;
             margin: auto;
+            overflow: scroll;
         }
 
         .error {

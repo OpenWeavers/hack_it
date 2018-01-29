@@ -8,7 +8,7 @@ if (!isset($_SESSION['username'])) {
 if (isset($_SESSION['username']) && $_SESSION['current_level'] != $level) {
     header("location:" . $_SESSION['current_level'] . ".php");
 }
-if ($_SESSION['on_block'] == $level) {
+if (isset($_SESSION['username']) && $_SESSION['on_block'] == $level) {
     $now = date('Y-m-d H:i:s');
     $time_to_unblock = date($_SESSION['when_to_unblock']);
     if ($time_to_unblock <= $now) {
