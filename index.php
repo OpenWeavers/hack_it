@@ -61,7 +61,7 @@
         }
 
         #limit {
-            max-width: 380px;
+            max-width: 320px;
         }
     </style>
 </head>

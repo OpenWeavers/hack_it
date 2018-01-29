@@ -106,6 +106,7 @@ function test_input($data)
             <li><a href="../logout.php">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+            <li class="userView name"><a href=""><?php echo $_SESSION['username'];?></a> </li>
             <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
@@ -128,6 +129,9 @@ function test_input($data)
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
         </button>
+        &nbsp;&nbsp;
+        <br>
+        <br>
         <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
         <div class="col s12">
         <span class="error"><?php if (isset($_GET['a']) && ($_GET['a']) == 'f') {
