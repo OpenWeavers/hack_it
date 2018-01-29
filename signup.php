@@ -213,14 +213,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <body>
 <nav>
     <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">&nbsp;&nbsp;hack_it</a>
+        <a href="index.php" class="brand-logo">&nbsp;&nbsp;hack_it</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <li><a href="lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="about.php">About</a></li>
+            <li><a href="login.php">Log In</a> </li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
+            <li><a href="login.php">Log In</a> </li>
             <li><a href="lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="about.php">About</a></li>

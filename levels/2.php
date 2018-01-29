@@ -128,10 +128,11 @@ if ($_SESSION['on_block'] == $level) {
                 <label for="input1">Answer</label>
             </div>
         </div>
-        <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
+
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
         </button>
+        <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
     </form>
 </div>
 </body>
