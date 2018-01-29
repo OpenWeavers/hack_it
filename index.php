@@ -55,7 +55,6 @@
                 <a class="mdl-navigation__link" href="./lboard.php">Leader Board</a>
                 <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a>
                 <a class="mdl-navigation__link" href="about.php">About</a>
-                <a class="mdl-navigation__link" href="./login.php">Sign In</a>
             </nav>
         </div>
     </header>
@@ -79,15 +78,12 @@
                     <div class="mdl-card__title">
                         <h2 class="mdl-card__title-text" style="color: black" align="left">Welcome</h2>
                     </div>
-                    <div class="mdl-card__supporting-text" align="left">
-                        An Online Event, that is as simple as just filling text in an Input Field, but involves a lot of
-                        tweaks and hacks of varying difficulty to get to the answer. The questions will be framed such
-                        that, the participants will gain good amount of basic hacking skills and also an exposure to
-                        places to get started with such stuff and also some cryptic puzzles.
-                    </div>
-                    <div class="mdl-card__actions mdl-card--border" align="left">
+                    <div class="mdl-card__actions mdl-card--border">
                         <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="signup.php">
                             Sign Up
+                        </a>
+                        <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect" href="./login.php">
+                            Sign In
                         </a>
                     </div>
                 </div>
