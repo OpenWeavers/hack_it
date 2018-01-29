@@ -51,7 +51,7 @@
                         <a class="mdl-navigation__link" href="./lboard.php">Leader Board</a>
                         <a class="mdl-navigation__link" href="https://www.reddit.com/r/hack_it/"  target="_blank">r/hack_it</a>
                         <a class="mdl-navigation__link" href="about.php">About</a>
-                        <a class="mdl-navigation__link" href="./login.php">Sign In</a>
+                        <a class="mdl-navigation__link" href="./login.php">Log In</a>
                     </nav>
                 </div>
             </header>

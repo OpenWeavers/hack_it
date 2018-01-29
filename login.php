@@ -98,12 +98,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <a href="#" class="brand-logo">&nbsp;&nbsp;hack_it</a>
         <ul id="slide-out" class="side-nav">
 
-            <li><a href="lboard.php">LeaderBoard</a></li>
+            <li><a href="lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="about.php">About</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li><a href="lboard.php">Leader Board</a></li>
+            <li><a href="lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="about.php">About</a></li>
         </ul>
@@ -125,6 +125,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="password">Password</label>
             </div>
             <a href="frgt_pwd.php">Forgot Password?</a>
+            <a href="signup.php">Create a new account?</a>
             <button class="btn waves-effect waves-light right-align-align" type="submit" name="action"
                     style="float: right">LogIn
                 <i class="fa fa-sign-in right" aria-hidden="true"></i>
