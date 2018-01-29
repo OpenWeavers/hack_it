@@ -99,7 +99,7 @@ function test_input($data)
         <a href="../index.php" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;hack_it</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li>Level : <?php echo $_SESSION['current_level'] ?></li>
+            <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="../about.php">About</a></li>
