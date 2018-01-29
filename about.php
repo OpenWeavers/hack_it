@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!doctype html>
 <html lang="">
     <head>
@@ -39,19 +42,27 @@
         <!-- Always shows a header, even in smaller screens. -->
         <nav>
                       <div class="nav-wrapper">
-                        <a href="#!" class="brand-logo">hack_it</a>
+                        <a href="index.php" class="brand-logo">hack_it</a>
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                           <li><a href="lboard.php">Leaderboard</a></li>
                           <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-                          <li><a href="#">Level No</a></li>
-                          <li><a href="#">Sign Out</a></li>
+                            <?php
+                            if (isset($_SESSION['username']))
+                                echo "<li><a href=\"logout.php\">Log Out</a></li>";
+                            else
+                                echo "<li><a href=\"login.php\">Log In</a></li>";
+                            ?>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
                           <li><a href="lboard.php">Leaderboard</a></li>
                           <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-                          <li><a href="#">Level No.</a></li>
-                          <li><a href="#">Sign Out</a></li>
+                            <?php
+                            if (isset($_SESSION['username']))
+                                echo "<li><a href=\"logout.php\">Log Out</a></li>";
+                            else
+                                echo "<li><a href=\"login.php\">Log In</a></li>";
+                            ?>
                         </ul>
                       </div>
                   </nav>

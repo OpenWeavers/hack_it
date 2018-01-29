@@ -1,5 +1,6 @@
 <?php
 require 'com/config/DBHelper.php';
+session_start();
 $db = new DBHelper();
 $con = $db->getConnection();
 
@@ -46,17 +47,34 @@ if($res = $con->query( $query)) {
 <body>
 <nav>
     <div class="nav-wrapper">
-        <a href="#!" class="brand-logo">&nbsp;hack_it</a>
+        <a href="index.php" class="brand-logo">&nbsp;hack_it</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-            <li><a href="./index.php">Home</a></li>
+            <?php
+            if(isset($_SESSION['username']))
+                echo "<li><a href=\"levels/".$_SESSION['current_level'].".php\">Home</a></li>";
+            else
+                echo "<li><a href=\"./index.php\">Home</a></li>";
+            ?>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="./about.html">About</a></li>
+            <li><a href="about.php">About</a></li>
+            <?php
+            if (isset($_SESSION['username']))
+                echo "<li><a href=\"logout.php\">Log Out</a></li>";
+            else
+                echo "<li><a href=\"login.php\">Log In</a></li>";
+            ?>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li><a href="./index.php">Home</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="./about.html">About</a></li>
+            <li><a href="about.php">About</a></li>
+            <?php
+            if (isset($_SESSION['username']))
+                echo "<li><a href=\"logout.php\">Log Out</a></li>";
+            else
+                echo "<li><a href=\"login.php\">Log In</a></li>";
+            ?>
         </ul>
     </div>
 </nav>

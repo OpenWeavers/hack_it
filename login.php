@@ -30,11 +30,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $res = $con->query($query);
         $r = $res->fetch_assoc();
         if ($res->num_rows == 1) {
-            $_SESSION['username'] = $username;
             $query1 = "SELECT * FROM track_records WHERE username='$username'";
             $res1 = $con->query($query1);
             $r1 = $res1->fetch_assoc();
             if ($res1->num_rows == 1) {
+                $_SESSION['username'] = $username;
                 $_SESSION['current_level'] = $r1['current_level'];
                 $_SESSION['total_score'] = $r1['total_score'];
                 $_SESSION['current_hint_took'] = $r1['current_hint_took'];
@@ -100,12 +100,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             <li><a href="lboard.php">LeaderBoard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.php">About</a></li>
         </ul>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li><a href="lboard.php">Leader Board</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="about.html">About</a></li>
+            <li><a href="about.php">About</a></li>
         </ul>
     </div>
 </nav>

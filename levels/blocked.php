@@ -53,12 +53,12 @@ if (isset($_SESSION['username'])) {
         <ul class="right hide-on-med-and-down">
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="../about.html">About</a></li>
+            <li><a href="../about.php">About</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
-            <li><a href="../about.html">About</a></li>
+            <li><a href="../about.php">About</a></li>
         </ul>
     </div>
 </nav>
