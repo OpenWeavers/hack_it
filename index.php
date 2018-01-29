@@ -35,7 +35,7 @@
         }
 
         /* DEMO-SPECIFIC STYLES */
-        .typewriter h5 {
+        .typewriter h6 {
             color: #000000;
             font-family: monospace;
             overflow: hidden; /* Ensures the content is not revealed until the animation */
@@ -119,7 +119,7 @@
                 </div>
             </div>
             <div class="typewriter">
-                <h5 id="limit">Congregate.Create.Contribute.</h5>
+                <h6 id="limit">Congregate.Create.Contribute.</h6>
             </div>
         </div>
     </main>
