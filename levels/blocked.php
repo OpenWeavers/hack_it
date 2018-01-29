@@ -41,6 +41,11 @@ if (isset($_SESSION['username'])) {
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="../css/main.css">
+    <style>
+        #lnk {
+            color: #ffffff;
+        }
+    </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script src="../js/flipclock.js"></script>
@@ -72,10 +77,19 @@ if (isset($_SESSION['username'])) {
         </ul>
     </div>
 </nav>
-<div class="row">
-    <div id="wait">
-        As you have used a hint, please wait for:<br><br><br><br><span class="clock"></span><br><br><br><br>
-        <a href="blocked.php"> Click here</a> to Refresh
+<div class="row center-align">
+    <div class="col s12 m6 offset-m3 center-align">
+        <div class="card teal z-depth-3 center-align">
+            <div class="card-content white-text center">
+                <span class="card-title">As you have used a hint, please wait for:</span>
+                <div id="wait">
+                    <span class="clock"></span>
+                </div>
+            </div>
+            <div class="card-action center-align teal lighten-1">
+                <a href="blocked.php" id="lnk">Refresh</a>
+            </div>
+        </div>
     </div>
 </div>
 <script type="text/javascript">
