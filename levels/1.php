@@ -22,6 +22,14 @@ if ($_SESSION['on_block'] == $level) {
         header("location:blocked.php");
     }
 }
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 ?>
 <!doctype html>
 <html lang="">
@@ -121,6 +129,10 @@ if ($_SESSION['on_block'] == $level) {
             <i class="material-icons right">send</i>
         </button>
         <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
+        <div class="col s12">
+        <span class="error"><?php if (test_input($_GET['a']) == 'f') {
+                echo "Answer is incorrect. Try again!";
+            } ?></span></div>
     </form>
 </div>
 </body>

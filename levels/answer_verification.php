@@ -1,19 +1,20 @@
 <?php
 require '../com/config/DBHelper.php';
 session_start();
-if (!isset($_SESSION['username']))  {
+if (!isset($_SESSION['username'])) {
     header("location:../index.php");
 }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 
-if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
-    if (!empty($_POST['answer']))   {
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!empty($_POST['answer'])) {
         $db = new DBHelper();
         $con = $db->getConnection();
 
@@ -32,7 +33,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
         $res = $con->query($query);
         $r = $res->fetch_assoc();
         $current_level = $r['current_level'];
-        if ($actual_answer == $answer && $_SESSION['current_level'] == $current_level)   {
+        if ($actual_answer == $answer && $_SESSION['current_level'] == $current_level) {
             //Right answer!
             $current_hint_took = $r['current_hint_took'];
             $total_score = $r['total_score'];
@@ -48,20 +49,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
             $_SESSION['current_level'] = $current_level;
             $_SESSION['total_score'] = $total_score;
             $_SESSION['current_hint_took'] = 0;
-            if ($current_hint_took == 1)  {
+            if ($current_hint_took == 1) {
                 //redirect to wait page
                 header("location:blocked.php");
             }
-            header("location:".$_SESSION['current_level'].".php");
+            header("location:" . $_SESSION['current_level'] . ".php");
+        } else {
+            header("location:" . $_SESSION['current_level'] . ".php?a=f");
         }
-        else    {
-            header("location:".$_SESSION['current_level'].".php");
-        }
+    } else {
+        header("location:" . $_SESSION['current_level'] . ".php");
     }
-    else    {
-        header("location:".$_SESSION['current_level'].".php");
-    }
-}
-else    {
-    header("location:".$_SESSION['current_level'].".php");
+} else {
+    header("location:" . $_SESSION['current_level'] . ".php");
 }

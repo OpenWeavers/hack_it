@@ -6,9 +6,9 @@ $con = $db->getConnection();
 
 $query = "SELECT username, total_score, current_level FROM `track_records` ORDER BY total_score DESC, last_success ASC";
 $data = [];
-if($res = $con->query( $query)) {
+if ($res = $con->query($query)) {
     $i = 0;
-    while($row = $res->fetch_assoc())   {
+    while ($row = $res->fetch_assoc()) {
         $data[$i]['username'] = $row['username'];
         $data[$i]['current_level'] = $row['current_level'];
         $data[$i]['total_score'] = $row['total_score'];
@@ -51,8 +51,8 @@ if($res = $con->query( $query)) {
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <?php
-            if(isset($_SESSION['username']))
-                echo "<li><a href=\"levels/".$_SESSION['current_level'].".php\">Home</a></li>";
+            if (isset($_SESSION['username']))
+                echo "<li><a href=\"levels/" . $_SESSION['current_level'] . ".php\">Home</a></li>";
             else
                 echo "<li><a href=\"./index.php\">Home</a></li>";
             ?>
@@ -67,8 +67,8 @@ if($res = $con->query( $query)) {
         </ul>
         <ul class="side-nav" id="mobile-demo">
             <?php
-            if(isset($_SESSION['username']))
-                echo "<li><a href=\"levels/".$_SESSION['current_level'].".php\">Home</a></li>";
+            if (isset($_SESSION['username']))
+                echo "<li><a href=\"levels/" . $_SESSION['current_level'] . ".php\">Home</a></li>";
             else
                 echo "<li><a href=\"./index.php\">Home</a></li>";
             ?>
@@ -96,12 +96,12 @@ if($res = $con->query( $query)) {
         </thead>
         <tbody>
         <?php
-        for($i=0;$i<sizeof($data);$i++) {
+        for ($i = 0; $i < sizeof($data); $i++) {
             echo "<tr>";
-            echo "<td>".($i+1)."</td>";
-            echo "<td>".$data[$i]['username']."</td>";
-            echo "<td>".$data[$i]['current_level']."</td>";
-            echo "<td>".$data[$i]['total_score']."</td>";
+            echo "<td>" . ($i + 1) . "</td>";
+            echo "<td>" . $data[$i]['username'] . "</td>";
+            echo "<td>" . $data[$i]['current_level'] . "</td>";
+            echo "<td>" . $data[$i]['total_score'] . "</td>";
             echo "</tr>";
         }
         ?>

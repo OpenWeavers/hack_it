@@ -22,6 +22,14 @@ if ($_SESSION['on_block'] == $level) {
         header("location:blocked.php");
     }
 }
+function test_input($data)
+{
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 ?>
 <!doctype html>
 <html lang="">
@@ -61,20 +69,18 @@ if ($_SESSION['on_block'] == $level) {
         $(document).ready(function () {
             $(".button-collapse").sideNav();
 
-            $("#hntbtn").click(function(e) {
+            $("#hntbtn").click(function (e) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
                     url: "get_hint.php",
-                    data: {
-
-                    },
-                    success: function(result) {
+                    data: {},
+                    success: function (result) {
                         //alert('ok:' + result);
                         var $toastContent = '<span style="word-wrap: break-word">' + result + '</span><button class="btn-flat toast-action" onclick="dismissToast()">Dismiss</button>';
                         Materialize.toast($toastContent, 100000);
                     },
-                    error: function(result) {
+                    error: function (result) {
                         //alert('error');
                     }
                 });
@@ -122,11 +128,11 @@ if ($_SESSION['on_block'] == $level) {
 
         <div class="row">
             <script type="text/javascript" language="javascript">
-                $('.myIframe').css('height', $(window).height()*.5+'px');
+                $('.myIframe').css('height', $(window).height() * .5 + 'px');
             </script>
             <div class="input-field col s12">
                 <input name="answer" id="input1" class="input-field inline" type="text">
-                <br />
+                <br/>
                 <label for="input1">Answer</label>
             </div>
         </div>
@@ -135,6 +141,10 @@ if ($_SESSION['on_block'] == $level) {
             <i class="material-icons right">send</i>
         </button>
         <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
+        <div class="col s12">
+        <span class="error"><?php if (test_input($_GET['a']) == 'f') {
+                echo "Answer is incorrect. Try again!";
+            } ?></span></div>
     </form>
 </div>
 </body>
