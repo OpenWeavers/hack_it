@@ -66,7 +66,12 @@ if($res = $con->query( $query)) {
             ?>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li><a href="./index.php">Home</a></li>
+            <?php
+            if(isset($_SESSION['username']))
+                echo "<li><a href=\"levels/".$_SESSION['current_level'].".php\">Home</a></li>";
+            else
+                echo "<li><a href=\"./index.php\">Home</a></li>";
+            ?>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="about.php">About</a></li>
             <?php

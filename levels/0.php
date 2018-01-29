@@ -15,6 +15,21 @@ $_SESSION['current_level'] = 1;
 ?>
 <html>
 <body>
-welcome. <a href="1.php">Begin Hack</a>
+Welcome!
+<h5></centre>How To Play ?</h5>
+<ol><h6><li>Sign up using the link provided.</li>
+        <li>A confirmation link will be sent to your mail. Use it to login.</li>
+        <li>Log in and get cracking.</li>
+        <li>Use any tool, ranging from your common-sense to Google, to arrive at the answer.</li>
+        <li>Answers in lower case, with no space in between words.<br>
+            For example, if answer is "LCC SJCE", you should type in "lccsjce"</li>
+        <li>Every level contains a hint, but accessing it will cause a time-penalty of 10 minutes.<br>
+            Once the hint is obtained, accessing it won't cause any penalty.</li>
+        <li>Position in leaderboard is decided on the user's score. If two or more users have the same score,<br>
+            the tie-breaker is the time they took to reach that level.</li>
+        <li>If stuck anywhere, ping us at the sub-reddit provided.</li>
+    </h6></ol>
+<h6>Cheers.</h6>
+<a href="1.php">Begin Hack</a>
 </body>
 </html>

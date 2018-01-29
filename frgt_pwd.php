@@ -71,7 +71,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
 
             //Recipients
-            $mail->setFrom('open.weavers@linuxmail.org', 'hack_it, LCC SJCE');
+            $mail->setFrom('openweavers@gmail.com', 'hack_it, LCC SJCE');
             $mail->addAddress($r['email']);               // Name is optional
 
             //Content

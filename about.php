@@ -45,6 +45,12 @@ session_start();
                         <a href="index.php" class="brand-logo">hack_it</a>
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
+                            <?php
+                            if(isset($_SESSION['username']))
+                                echo "<li><a href=\"levels/".$_SESSION['current_level'].".php\">Home</a></li>";
+                            else
+                                echo "<li><a href=\"./index.php\">Home</a></li>";
+                            ?>
                           <li><a href="lboard.php">Leaderboard</a></li>
                           <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
                             <?php
@@ -55,6 +61,12 @@ session_start();
                             ?>
                         </ul>
                         <ul class="side-nav" id="mobile-demo">
+                            <?php
+                            if(isset($_SESSION['username']))
+                                echo "<li><a href=\"levels/".$_SESSION['current_level'].".php\">Home</a></li>";
+                            else
+                                echo "<li><a href=\"./index.php\">Home</a></li>";
+                            ?>
                           <li><a href="lboard.php">Leaderboard</a></li>
                           <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
                             <?php
