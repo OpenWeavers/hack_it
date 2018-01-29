@@ -33,6 +33,36 @@
         .mdl-card__supporting-text {
             font-size: 15px;
         }
+
+        /* DEMO-SPECIFIC STYLES */
+        .typewriter h5 {
+            color: #000000;
+            font-family: monospace;
+            overflow: hidden; /* Ensures the content is not revealed until the animation */
+            border-right: .1em solid lightseagreen; /* The typwriter cursor */
+            white-space: nowrap; /* Keeps the content on a single line */
+            margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+            letter-spacing: 1px; /* Adjust as needed */
+            animation:
+                    typing 4.5s steps(50, end),
+                    blink-caret .5s step-end infinite;
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        /* The typewriter cursor effect */
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: lightseagreen }
+        }
+
+        #limit {
+            max-width: 30%;
+        }
     </style>
 </head>
 <body>
@@ -88,9 +118,11 @@
                     </div>
                 </div>
             </div>
+            <div class="typewriter">
+                <h5 id="limit">Congregate.Create.Contribute.</h5>
+            </div>
         </div>
     </main>
 </div>
-
 </body>
 </html>
