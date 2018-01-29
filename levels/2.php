@@ -142,7 +142,7 @@ function test_input($data)
         </button>
         <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
         <div class="col s12">
-        <span class="error"><?php if (test_input($_GET['a']) == 'f') {
+        <span class="error"><?php if (isset($_GET['a']) && test_input($_GET['a']) == 'f') {
                 echo "Answer is incorrect. Try again!";
             } ?></span></div>
     </form>
