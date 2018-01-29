@@ -47,7 +47,7 @@ if($res = $con->query( $query)) {
 <body>
 <nav>
     <div class="nav-wrapper">
-        <a href="index.php" class="brand-logo">&nbsp;hack_it</a>
+        <a href="index.php" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;hack_it</a>
         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
             <?php

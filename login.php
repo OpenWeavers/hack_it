@@ -95,7 +95,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <nav>
     <div class="nav-wrapper">
         <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
-        <a href="index.php" class="brand-logo">&nbsp;&nbsp;hack_it</a>
+        <a href="index.php" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;hack_it</a>
         <ul id="slide-out" class="side-nav">
 
             <li><a href="lboard.php">Leaderboard</a></li>

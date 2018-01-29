@@ -42,7 +42,7 @@ session_start();
         <!-- Always shows a header, even in smaller screens. -->
         <nav>
                       <div class="nav-wrapper">
-                        <a href="index.php" class="brand-logo">hack_it</a>
+                        <a href="index.php" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;hack_it</a>
                         <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
                         <ul class="right hide-on-med-and-down">
                             <?php
