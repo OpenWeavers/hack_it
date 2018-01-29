@@ -79,25 +79,55 @@ session_start();
         </ul>
     </div>
 </nav>
-<h5>How To Play ?</h5>
-<h6>
-    <ol>
-        <li>Sign up using the link provided.</li>
-        <li>A confirmation link will be sent to your mail. Use it to login.</li>
-        <li>Log in and get cracking.</li>
-        <li>Use any tool, ranging from your common-sense to Google, to arrive at the answer.</li>
-        <li>Answers in lower case, with no space in between words.<br>
-            For example, if answer is "LCC SJCE", you should type in "lccsjce"
-        </li>
-        <li>Every level contains a hint, but accessing it will cause a time-penalty of 10 minutes.<br>
-            Once the hint is obtained, accessing it again won't cause any penalty.
-        </li>
-        <li>Position in leaderboard is decided on the user's score. If two or more users have the same score,<br>
-            the tie-breaker is the time they took to reach that level.
-        </li>
-        <li>If stuck anywhere, ping us at the sub-reddit provided.</li>
-    </ol>
-</h6>
-<h6>Cheers.</h6>
+<div class="row">
+    <div class="col s12 m6">
+        <div class="card teal z-depth-3">
+            <div class="card-content white-text">
+                <span class="card-title"><b>ABOUT</b></span>
+                <p>hack_it is an online event, that is as simple as filling text in an Input Field, but involves a lot
+                    of tweaks and hacks of varying difficulty to get to the answer. The questions will be framed such
+                    that, the participants will gain good amount of basic hacking skills and also an exposure to
+                    places to get started with such stuff and also some cryptic puzzles.</p>
+                <br>
+                <p>hack_it is a part of FOSS BYTES SJCE'18.
+                    For other exciting events visit
+                    <a href="http://www.lccsjce.org/">LCC-SJCE</a></p>
+            </div>
+        </div>
+        <div class="card teal z-depth-3">
+            <div class="card-content white-text">
+                <span class="card-title"><b>LCC-SJCE</b></span>
+                <p>Linux Campus Club (LCC) is an organization under the department of Computer Science SJCE, Mysore.
+                    Its primary goal is fostering the use of free and open source software among the students.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col s12 m6">
+        <div class="card teal z-depth-3">
+            <div class="card-content white-text">
+                <span class="card-title"><b>HOW TO PLAY ?</b></span>
+                <p>
+                <ol>
+                    <li>Sign up using the link provided.</li>
+                    <li>A confirmation link will be sent to your mail. Use it to login.</li>
+                    <li>Log in and get cracking.</li>
+                    <li>Use any tool, ranging from your common-sense to Google, to arrive at the answer.</li>
+                    <li>Answers in lower case, with no space in between words.<br>
+                        For example, if answer is "LCC SJCE", you should type in "lccsjce"
+                    </li>
+                    <li>Every level contains a hint, but accessing it will cause a time-penalty of 10 minutes.<br>
+                        Once the hint is obtained, accessing it again won't cause any penalty.
+                    </li>
+                    <li>Position in leaderboard is decided on the user's score. If two or more users have the same
+                        score,<br>
+                        the tie-breaker is the time they took to reach that level.
+                    </li>
+                    <li>If stuck anywhere, ping us at the sub-reddit provided.</li>
+                </ol>
+                Cheers.</p>
+            </div>
+        </div>
+    </div>
+</div>
 </body>
 </html>
