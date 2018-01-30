@@ -1,9 +1,45 @@
 <html>
 <head>
-    <style>
-        .error {color : red;}
-    </style>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Reset Password</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="manifest" href="site.webmanifest">
+        <!-- Place favicon.ico in the root directory -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css"/>
+        <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+        <!--<link rel="stylesheet" href="css/materialize.css" >-->
+        <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection"/>
+        <link rel="stylesheet" href="css/main.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="js/materialize.min.js"></script>
+        <style>
+            #login form {
+                display: inline-block;
+                position: fixed;
+                left: 0;
+                right: 0;
+                margin: auto;
+            }
+
+            .error {
+                color: red;
+            }
+        </style>
+        <script>
+            $(document).ready(function () {
+                $(".button-collapse").sideNav();
+            });
+
+        </script>
+    </head>
+
 <body>
 <script>
     function check() {
@@ -96,13 +132,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 } else {
     echo '
-    <h3 > Enter Email - ID for which password reset is required:</h3 >
-    <form action = "' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method = "post" onsubmit="return check()">
+    <div class="row card" id="login">
+    
+    <form class="col m6 s12" action = "' . htmlspecialchars($_SERVER["PHP_SELF"]) . '" method = "post" onsubmit="return check()">
+        <h4 > Enter Email ID associated with the Username for which password reset is required:</h4 >
+        <div class="row">
+        <div class="input-field col s12">
+        <i class="material-icons prefix">email</i>
         <input id = "email" name = "email" type = "email" placeholder = "Email-ID" required ><br >
+        </div>
+        <div class="input-field col s12">
+        <i class="material-icons prefix">vpn_key</i>
         <input id = "password1" name = "password" type = "password" placeholder = "New Password" required ><br>
+        </div>
+        <div class="input-field col s12">
+        <i class="material-icons prefix">done_all</i>
         <input id = "password2" name = "password" type = "password" placeholder = "Confirm New Password" required ><br>
-        <button type = "submit" > Reset Password </button >
+        </div>
+        <div class="input-field col s12">
+        <button type = "submit" class="btn" > Reset Password </button >
+        </div>
+        </div>
     </form >
+    </div>
     <span class="error" id="passwordE"></span> ';
 }
 
