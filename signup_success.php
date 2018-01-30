@@ -5,11 +5,11 @@
     <title>Sign Up Successful</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css"/>
     <link rel="manifest" href="site.webmanifest">
     <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css"/>
+
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
     <!--<link rel="stylesheet" href="css/materialize.css" >-->
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.css">

@@ -108,6 +108,7 @@ session_start();
                 <span class="card-title"><b>HOW TO PLAY ?</b></span>
                 <p>
                 <ol>
+                    <li>Laptops are recommended over Mobile Phones.</li>
                     <li>Sign up using the link provided.</li>
                     <li>A confirmation link will be sent to your mail. Use it to login.</li>
                     <li>Log in and get cracking.</li>
