@@ -85,7 +85,6 @@ if ($res = $con->query($query)) {
 </nav>
 <div class="row" id="lbrd">
     <table class="striped">
-        <caption>LeaderBoard</caption>
         <thead>
         <tr>
             <th>Position</th>
