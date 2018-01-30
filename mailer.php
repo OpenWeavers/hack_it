@@ -15,7 +15,7 @@ $mail->SMTPAuth = true;                               // Enable SMTP authenticat
 //$mail->Password = '()pen\|/eavers';
 $mail->Host = 'smtp.gmail.com';
 $mail->Username = 'openweavers@gmail.com';
-$mail->Password = '()pen\|/eavers';                           // SMTP password
+$mail->Password = 'openhack_itweavers';                           // SMTP password
 $mail->SMTPSecure = 'tls';                            // Enable TLS encryption, `ssl` also accepted
 $mail->Port = 587;
 ?>
