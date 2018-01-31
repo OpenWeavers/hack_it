@@ -71,17 +71,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 $hash = uniqid(rand());
                 try {
                     //Recipients
-                    $mail->setFrom('open.weavers@linuxmail.org', 'hack_it, LCC SJCE');
-                    $mail->addAddress($email);               // Name is optional
+                    //$mail->setFrom('open.weavers@linuxmail.org', 'hack_it, LCC SJCE');
+                    //$mail->addAddress($email);               // Name is optional
 
                     //Content
-                    $mail->isHTML(true);                                  // Set email format to HTML
-                    $mail->Subject = 'Account Confirmation Link';
-                    $mail->Body = 'Click on this <a href="' . $root_path . 'confirm.php?m=c&u=' . $username . '&h=' . $hash . '"><b>link</b></a>
-                                 to activate your hack_it account.';
-                    $mail->AltBody = 'A hack_it account was created using this email.Click on this link to confirm activation';
+                    //$mail->isHTML(true);                                  // Set email format to HTML
+                    //$mail->Subject = 'Account Confirmation Link';
+                    //$mail->Body = 'Click on this <a href="' . $root_path . 'confirm.php?m=c&u=' . $username . '&h=' . $hash . '"><b>link</b></a>
+                      //           to activate your hack_it account.';
+                    //$mail->AltBody = 'A hack_it account was created using this email.Click on this link to confirm activation';
 
-                    $mail->send();
+                    //$mail->send();
+
+                    $to = $email;
+                    $subject = 'Account Confirmation Link';
+                    $body = 'Click on this <a href="' . $root_path . 'confirm.php?m=c&u=' . $username . '&h=' . $hash . '"><b>link</b></a>
+                                 to activate your hack_it account.';
+                    mail($to, $subject, $body);
 
                     $query = "INSERT INTO users(username,email,password,phone,college,hash) VALUES ('$username','$email','$password','$phone','$college','$hash')";
                     $res = $con->query($query);

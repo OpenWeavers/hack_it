@@ -106,19 +106,27 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         try {
 
             //Recipients
-            $mail->setFrom('openweavers@gmail.com', 'hack_it, LCC SJCE');
-            $mail->addAddress($r['email']);               // Name is optional
+            //$mail->setFrom('openweavers@gmail.com', 'hack_it, LCC SJCE');
+            //$mail->addAddress($r['email']);               // Name is optional
 
             //Content
-            $mail->isHTML(true);                                  // Set email format to HTML
-            $mail->Subject = 'Password Reset Confirmation Link';
-            $mail->Body = 'A Password recovery attempt was made on your account.<br>
+            //$mail->isHTML(true);                                  // Set email format to HTML
+            //$mail->Subject = 'Password Reset Confirmation Link';
+            //$mail->Body = 'A Password recovery attempt was made on your account.<br>
+              //                Click on this <a href="' . $root_path . 'confirm.php?m=r&u=' . $r['username'] . '&h=' . $hash . '"><b>link</b></a>
+                //              to confirm password change';
+            //$mail->AltBody = 'A Password recovery attempt was made on your account.Click on this link to confirm
+                  //            password change in a HTML-enabled mail service';
+
+            //$mail->send();
+
+            $to = $r['email'];
+            $subject = 'Password Reset Confirmation Link';
+            $body = 'A Password recovery attempt was made on your account.<br>
                               Click on this <a href="' . $root_path . 'confirm.php?m=r&u=' . $r['username'] . '&h=' . $hash . '"><b>link</b></a>
                               to confirm password change';
-            $mail->AltBody = 'A Password recovery attempt was made on your account.Click on this link to confirm 
-                              password change in a HTML-enabled mail service';
+            mail($to, $subject, $body);
 
-            $mail->send();
             echo 'Message has been sent.<br>';
             echo 'Access your mail to confirm Password Reset.<br>';
             echo '<a href="' . $root_path . '"><b>Go Back</b></a>';

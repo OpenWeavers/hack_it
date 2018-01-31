@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Jan 25, 2018 at 05:19 PM
+-- Generation Time: Jan 30, 2018 at 03:38 AM
 -- Server version: 10.1.30-MariaDB
 -- PHP Version: 7.2.1
 
@@ -40,9 +40,7 @@ CREATE TABLE `questions` (
 --
 
 INSERT INTO `questions` (`question_no`, `hint`, `answer`, `points`) VALUES
-(1, 'hint', '1', 10),
-(2, 'no hint', 'hello world', 20);
-
+(1, 'hint', '1', 10);
 -- --------------------------------------------------------
 
 --
@@ -63,9 +61,6 @@ CREATE TABLE `track_records` (
 -- Dumping data for table `track_records`
 --
 
-INSERT INTO `track_records` (`username`, `current_level`, `total_score`, `current_hint_took`, `on_block`, `when_to_unblock`, `last_success`) VALUES
-('sas', 1, 10, 0, 0, '2018-01-25 06:41:54', '2018-01-25 06:44:29'),
-('sourabh', 2, 20, 0, 0, '2018-01-25 06:41:14', '2018-01-25 17:07:41');
 
 -- --------------------------------------------------------
 
@@ -88,9 +83,6 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`username`, `email`, `password`, `phone`, `college`, `activated`, `temp_pwd`, `hash`) VALUES
-('sas', 'sas@sas.com', '8ad17dadafdf341124084e302023fc75bc5cf7b265b7ff84e383a5da182aa7f48d70e9e70b96b0045c10c911dadbcff9817ab7b1760c5366e6df3f33af5fc51c', 1234567890, 'sjce', 1, NULL, '19305891765a697c2e3ff68'),
-('sourabh', 'ss@ss.com', '8ad17dadafdf341124084e302023fc75bc5cf7b265b7ff84e383a5da182aa7f48d70e9e70b96b0045c10c911dadbcff9817ab7b1760c5366e6df3f33af5fc51c', 1234567890, 'sjce', 1, NULL, '17588021755a697c076cd86');
 
 --
 -- Indexes for dumped tables
