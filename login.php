@@ -125,7 +125,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <label for="password">Password</label>
             </div>
             <a href="frgt_pwd.php">Forgot Password?</a>
-            <a href="signup.php">Create a new account?</a>
             <button class="btn waves-effect waves-light right-align-align" type="submit" name="action"
                     style="float: right">LogIn
                 <i class="fa fa-sign-in right" aria-hidden="true"></i>
