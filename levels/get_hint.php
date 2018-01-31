@@ -30,7 +30,7 @@ if (isset($_SESSION['username']) && $_SERVER['REQUEST_METHOD'] == 'POST') {
                 $on_block = $current_level + 1;
                 $_SESSION['on_block'] = $on_block;
                 $date = date_create("now");
-                date_add($date, date_interval_create_from_date_string("10 minutes"));
+                date_add($date, date_interval_create_from_date_string("3 minutes 30 seconds"));
                 $date = date_format($date, "Y-m-d H:i:s");
                 $when_to_unblock = $date;
                 $_SESSION['when_to_unblock'] = $date;
