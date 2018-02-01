@@ -360,3 +360,25 @@ nav{
 margin-left: 15%;
 margin-top: 5%;
 }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #FFFFFF;
+    color: #009688;
+    border-top: .5px solid #009688 ;
+    text-align: center;
+}
+
+.footernobg {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    color: white;
+
+    text-align: center;
+}

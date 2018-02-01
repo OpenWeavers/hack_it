@@ -188,6 +188,7 @@ $_SESSION['current_level'] = 1;
 
     </div>
 </div>
+<footer class="footernobg footer-copyright"><div></div><div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img src="../img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
 
 </body>
 </html>

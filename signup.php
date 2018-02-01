@@ -236,59 +236,58 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </div>
 </nav>
-&nbsp; &nbsp;
 <div class="row" id="sgnupform">
-
-    <form class="col m6 s12" action="signup.php" onsubmit="return validateForm()" method="post">
-        <div class="row">
-            <div class="input-field col s12">
-                <i class="material-icons prefix">account_circle</i>
-                <input name="username" id="username" type="text" class="validate"
-                       value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $e != 1 && $e != 3) echo $_POST["username"]; ?>"
-                       required>
-                <span id="usernameE"
-                      class="error"><?php if ($_SERVER["REQUEST_METHOD"] == "POST" && ($e == 1 || $e == 3)) {
-                        echo "Username already exists. Try another one.";
-                    } ?></span>
-                <label for="icon_prefix">Username</label>
-            </div>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">lock</i>
-                <input name="password" id="password" type="password" class="validate" required>
-                <span id="passwordE" class="error"></span>
-                <label for="password">Password</label>
-            </div>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">phone</i>
-                <input name="phone" id="phone" type="tel" class="validate"
-                       value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_POST["phone"]; ?>" required>
-                <span id="phoneE" class="error"></span>
-                <label for="icon_telephone">Telephone</label>
-            </div>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">email</i>
-                <input name="email" id="email" type="email" class="validate"
-                       value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $e != 2 && $e != 3) echo $_POST["email"]; ?>"
-                       required>
-                <span id="emailE"
-                      class="error"><?php if ($_SERVER["REQUEST_METHOD"] == "POST" && ($e == 2 || $e == 3)) {
-                        echo "Email already exists. Try another one.";
-                    } ?></span>
-                <label for="email" data-error="wrong" data-success="right">Email</label>
-            </div>
-            <div class="input-field col s12">
-                <i class="material-icons prefix">school</i>
-                <input name="college" id="college" type="text" class="validate"
-                       value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_POST["college"]; ?>" required>
-                <span id="collegeE" class="error"></span>
-                <label for="college">College Name</label>
-            </div>
-            <button class="btn waves-effect waves-light right" type="submit" name="action"><i
-                        class="material-icons right">send</i>
-                Submit
-            </button>
+<form class="col m6 s12" action="signup.php" onsubmit="return validateForm()" method="post">
+    <div class="row">
+        <div class="input-field col s12">
+            <i class="material-icons prefix">account_circle</i>
+            <input name="username" id="username" type="text" class="validate"
+                   value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $e != 1 && $e != 3) echo $_POST["username"]; ?>"
+                   required>
+            <span id="usernameE"
+                  class="error"><?php if ($_SERVER["REQUEST_METHOD"] == "POST" && ($e == 1 || $e == 3)) {
+                    echo "Username already exists. Try another one.";
+                } ?></span>
+            <label for="icon_prefix">Username</label>
         </div>
-    </form>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">lock</i>
+            <input name="password" id="password" type="password" class="validate" required>
+            <span id="passwordE" class="error"></span>
+            <label for="password">Password</label>
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">phone</i>
+            <input name="phone" id="phone" type="tel" class="validate"
+                   value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_POST["phone"]; ?>" required>
+            <span id="phoneE" class="error"></span>
+            <label for="icon_telephone">Telephone</label>
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">email</i>
+            <input name="email" id="email" type="email" class="validate"
+                   value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST" && $e != 2 && $e != 3) echo $_POST["email"]; ?>"
+                   required>
+            <span id="emailE"
+                  class="error"><?php if ($_SERVER["REQUEST_METHOD"] == "POST" && ($e == 2 || $e == 3)) {
+                    echo "Email already exists. Try another one.";
+                } ?></span>
+            <label for="email" data-error="wrong" data-success="right">Email</label>
+        </div>
+        <div class="input-field col s12">
+            <i class="material-icons prefix">school</i>
+            <input name="college" id="college" type="text" class="validate"
+                   value="<?php if ($_SERVER["REQUEST_METHOD"] == "POST") echo $_POST["college"]; ?>" required>
+            <span id="collegeE" class="error"></span>
+            <label for="college">College Name</label>
+        </div>
+        <div class="col m12 s12">
+            <button class="btn waves-effect waves-light right" type="submit" name="action"><i class="material-icons right">send</i>Submit</button>
+        </div>
+    </div>
+</form>
 </div>
 </body>
+<footer class="footer footer-copyright"><div></div><div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img src="img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
+
 </html>

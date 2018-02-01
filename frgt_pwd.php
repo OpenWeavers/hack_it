@@ -40,6 +40,23 @@
 </head>
 
 <body>
+<nav>
+    <div class="nav-wrapper">
+        <a href="#" data-activates="slide-out" class="button-collapse"><i class="material-icons">menu</i></a>
+        <a href="index.php" class="brand-logo">&nbsp;&nbsp;&nbsp;&nbsp;hack_it</a>
+        <ul id="slide-out" class="side-nav">
+
+            <li><a href="lboard.php">Leaderboard</a></li>
+            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+            <li><a href="about.php">About</a></li>
+        </ul>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="lboard.php">Leaderboard</a></li>
+            <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
+            <li><a href="about.php">About</a></li>
+        </ul>
+    </div>
+</nav>
 <script>
     function check() {
         var x = document.getElementById('password1').value;
@@ -166,4 +183,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 ?>
 </body>
+<footer class="footer footer-copyright"><div></div><div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img src="img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
+
 </html>
