@@ -147,7 +147,7 @@ $_SESSION['current_level'] = 1;
                     <div class="card teal darken-2">
                         <div class="card-content white-text">
                             <span class="card-title">6. Use Hints Wisely.</span>
-                            <p>Every level contains a hint, but accessing it will cause a time-penalty of 10 minutes.
+                            <p>Every level contains a hint, but accessing it will cause a time-penalty of 3 minutes 30 seconds.
                                 Once the hint is obtained, accessing it again won't cause any penalty.</p>
                         </div>
 

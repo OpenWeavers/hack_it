@@ -119,7 +119,7 @@ session_start();
                     <li>Answers in lower case, with no space in between words.<br>
                         For example, if answer is "LCC SJCE", you should type in "lccsjce"
                     </li>
-                    <li>Every level contains a hint, but accessing it will cause a time-penalty of 10 minutes.<br>
+                    <li>Every level contains a hint, but accessing it will cause a time-penalty of 3 minutes 30 seconds.<br>
                         Once the hint is obtained, accessing it again won't cause any penalty.
                     </li>
                     <li>Position in leaderboard is decided on the user's score. If two or more users have the same
