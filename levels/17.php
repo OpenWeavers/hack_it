@@ -2,13 +2,14 @@
 require '../com/config/DBHelper.php';
 session_start();
 $level = basename($_SERVER['SCRIPT_FILENAME'], ".php");
-function ascii_sum($str){
-  $sum = 0;
-  $arr1 = str_split($str);
-  foreach ($arr1 as $item) {
-    $sum += ord($item);
-  }
-  return $sum;
+function ascii_sum($str)
+{
+    $sum = 0;
+    $arr1 = str_split($str);
+    foreach ($arr1 as $item) {
+        $sum += ord($item);
+    }
+    return $sum;
 }
 
 if (!isset($_SESSION['username'])) {
@@ -115,7 +116,7 @@ function test_input($data)
             <li><a href="../logout.php">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="userView name"><a href=""><?php echo $_SESSION['username'];?></a> </li>
+            <li class="userView name"><a href=""><?php echo $_SESSION['username']; ?></a></li>
             <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
@@ -125,99 +126,97 @@ function test_input($data)
     </div>
 </nav>
 <?php
-      $username = $_SESSION['username'];
-      $actual_answer = $username."__GETs_it_".ascii_sum($username);
-      if(isset($_GET['key1']) && isset($_GET['key2']) && isset($_GET['key3']) && isset($_GET['key4'])) {
-          if($_GET['key1']=='0' && $_GET['key2']=='1' && $_GET['key3']=='1' && $_GET['key4']=='0') {
-            //Please fix toast here, I'm struggling
-            echo "<script>Materialize.toast(\"<span style=\'word-wrap: break-word\'>Password: ".$actual_answer."</span><button class=\'btn-flat toast-action\' onclick=\'dismissToast()\'>Dismiss</button>\",100000)</script>";
+$username = $_SESSION['username'];
+$actual_answer = $username . "__GETs_it_" . ascii_sum($username);
+if (isset($_GET['key1']) && isset($_GET['key2']) && isset($_GET['key3']) && isset($_GET['key4'])) {
+    if ($_GET['key1'] == '0' && $_GET['key2'] == '1' && $_GET['key3'] == '1' && $_GET['key4'] == '0') {
+        //Please fix toast here, I'm struggling
+        echo "<script>Materialize.toast(\"<span style=\'word-wrap: break-word\'>Password: " . $actual_answer . "</span><button class=\'btn-flat toast-action\' onclick=\'dismissToast()\'>Dismiss</button>\",100000)</script>";
+    }
+}
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if (!empty($_POST['answer'])) {
+        $db = new DBHelper();
+        $con = $db->getConnection();
+
+        $answer = test_input(filter_input(INPUT_POST, 'answer'));
+        $answer = $con->real_escape_string($answer);
+
+        //fetch actual answer to verify
+        $question_no = $_SESSION['current_level'];
+        //$query = "SELECT * FROM questions WHERE question_no='$question_no'";
+        //$res = $con->query($query);
+        //$r = $res->fetch_assoc();
+        $points = 10;
+        $query = "SELECT * FROM track_records WHERE username='$username'";
+        $res = $con->query($query);
+        $r = $res->fetch_assoc();
+        $current_level = $r['current_level'];
+        $actual_answer = $username . "__GETs_it_" . ascii_sum($username);
+        if ($actual_answer == $answer && $_SESSION['current_level'] == $current_level) {
+            //Right answer!
+            $current_hint_took = $r['current_hint_took'];
+            $total_score = $r['total_score'];
+            $total_score = $total_score + $points;
+
+            $current_level = $current_level + 1;
+            $last_success = date('Y-m-d H:i:s');
+            //Reflect in DB
+            $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0,last_success='$last_success' WHERE username='$username'";
+            $con->query($query);
+
+            //Now handle session variables!
+            $_SESSION['current_level'] = $current_level;
+            $_SESSION['total_score'] = $total_score;
+            $_SESSION['current_hint_took'] = 0;
+            if ($current_hint_took == 1) {
+                //redirect to wait page
+                $on_block = $current_level;
+                $_SESSION['on_block'] = $on_block;
+                $date = date_create("now");
+                date_add($date, date_interval_create_from_date_string("30 minutes"));
+                $date = date_format($date, "Y-m-d H:i:s");
+                $when_to_unblock = $date;
+                $_SESSION['when_to_unblock'] = $date;
+
+                $query = "UPDATE track_records SET when_to_unblock='$when_to_unblock',on_block='$on_block' WHERE username='$username'";
+                $res = $con->query($query);
+                header("location:blocked.php");
+            } else {
+                header("location:" . $_SESSION['current_level'] . ".php");
+            }
+
+        } else {
+            header("location:" . $_SESSION['current_level'] . ".php");
         }
-      }
-      if ($_SERVER['REQUEST_METHOD'] == 'POST')   {
-          if (!empty($_POST['answer']))   {
-              $db = new DBHelper();
-              $con = $db->getConnection();
-
-              $answer = test_input(filter_input(INPUT_POST, 'answer'));
-              $answer = $con->real_escape_string($answer);
-
-              //fetch actual answer to verify
-              $question_no = $_SESSION['current_level'];
-              //$query = "SELECT * FROM questions WHERE question_no='$question_no'";
-              //$res = $con->query($query);
-              //$r = $res->fetch_assoc();
-              $points = 10;
-              $query = "SELECT * FROM track_records WHERE username='$username'";
-              $res = $con->query($query);
-              $r = $res->fetch_assoc();
-              $current_level = $r['current_level'];
-      $actual_answer = $username."__GETs_it_".ascii_sum($username);
-              if ($actual_answer == $answer && $_SESSION['current_level'] == $current_level)   {
-                  //Right answer!
-                  $current_hint_took = $r['current_hint_took'];
-                  $total_score = $r['total_score'];
-                  $total_score = $total_score + $points;
-
-                  $current_level = $current_level + 1;
-                  $last_success = date('Y-m-d H:i:s');
-                  //Reflect in DB
-                  $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0,last_success='$last_success' WHERE username='$username'";
-                  $con->query($query);
-
-                  //Now handle session variables!
-                  $_SESSION['current_level'] = $current_level;
-                  $_SESSION['total_score'] = $total_score;
-                  $_SESSION['current_hint_took'] = 0;
-                  if ($current_hint_took == 1) {
-                      //redirect to wait page
-                      $on_block = $current_level;
-                      $_SESSION['on_block'] = $on_block;
-                      $date = date_create("now");
-                      date_add($date, date_interval_create_from_date_string("30 minutes"));
-                      $date = date_format($date, "Y-m-d H:i:s");
-                      $when_to_unblock = $date;
-                      $_SESSION['when_to_unblock'] = $date;
-
-                      $query = "UPDATE track_records SET when_to_unblock='$when_to_unblock',on_block='$on_block' WHERE username='$username'";
-                      $res = $con->query($query);
-                      header("location:blocked.php");
-                  }
-                  else {
-                      header("location:" . $_SESSION['current_level'] . ".php");
-                  }
-
-              }
-              else    {
-                  header("location:".$_SESSION['current_level'].".php");
-              }
-          }
-          else    {
-              header("location:".$_SESSION['current_level'].".php");
-          }
-      } ?>
+    } else {
+        header("location:" . $_SESSION['current_level'] . ".php");
+    }
+} ?>
 <div class="row" id="ques">
     <form class="col s6" action="17.php" method="post">
-      
-      <div>
-        <div class="row">
-          <!--Please fix here dear sandwiches-->
-            <div class="card-panel">
-                  <p class="flow-text" style="font-size:20px"> Bertram Gilfoyle likes to GET his password though 4 keys key1, key2, key3 and key4 which are Xclusively ORdered </p>
-            </div>
-        </div>
-        <div class="row">
-            <div class="input-field col s12">
-                <input name="answer" id="input1" class="input-field inline" type="text">
-                <br/>
-                <label for="input1">Answer</label>
-            </div>
-        </div>
 
-        <button class="btn waves-effect waves-light" type="submit" name="action">Submit
-            <i class="material-icons right">send</i>
-        </button>
-        &nbsp;&nbsp;
-        <div class="col s12">
+        <div>
+            <div class="row">
+                <!--Please fix here dear sandwiches-->
+                <div class="card-panel">
+                    <p class="flow-text" style="font-size:20px"> Bertram Gilfoyle likes to GET his password though 4
+                        keys key1, key2, key3 and key4 which are Xclusively ORdered </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12">
+                    <input name="answer" id="input1" class="input-field inline" type="text">
+                    <br/>
+                    <label for="input1">Answer</label>
+                </div>
+            </div>
+
+            <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+                <i class="material-icons right">send</i>
+            </button>
+            &nbsp;&nbsp;
+            <div class="col s12">
         <span class="error"><?php if (isset($_GET['a']) && ($_GET['a']) == 'f') {
                 echo "Answer is incorrect. Try again!";
             } ?></span></div>

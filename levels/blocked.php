@@ -46,7 +46,7 @@ if (isset($_SESSION['username'])) {
             color: #ffffff;
         }
 
-        .clock  {
+        .clock {
             zoom: 0.7;
             -moz-transform: scale(0.7);
         }

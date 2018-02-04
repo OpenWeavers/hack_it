@@ -29,6 +29,7 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
 ?>
 <!doctype html>
 <html lang="">
@@ -110,14 +111,14 @@ function test_input($data)
             </div>
             <div class="input-field col s12">
                 <input name="answer" id="input1" class="input-field inline" type="text">
-                <br />
+                <br/>
                 <label for="input1">Answer</label>
             </div>
         </div>
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
         </button>
-        
+
         &nbsp;&nbsp;
         <br>
         <br>

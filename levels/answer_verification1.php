@@ -62,8 +62,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $query = "UPDATE track_records SET when_to_unblock='$when_to_unblock',on_block='$on_block' WHERE username='$username'";
                 $res = $con->query($query);
                 header("location:blocked.php");
-            }
-            else {
+            } else {
                 header("location:" . $_SESSION['current_level'] . ".php");
             }
 

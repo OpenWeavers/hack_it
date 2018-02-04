@@ -39,7 +39,8 @@ function test_input($data)
 </head>
 <body>
 <h1 align="center">Error 404. Page Not Found</h1>
-<img src="qres/404" alt="Page Not Found (404)." style="position: absolute; left: 50%; top: 50%; margin-left: -285px; margin-top: -190px;">
+<img src="qres/404" alt="Page Not Found (404)."
+     style="position: absolute; left: 50%; top: 50%; margin-left: -285px; margin-top: -190px;">
 <h7 style="position: absolute; left: 50%; top: 130%; margin-top: -290px;">Or Is It?</h7>
 </body>
 </html>

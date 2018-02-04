@@ -105,7 +105,7 @@ function test_input($data)
             <li><a href="../logout.php">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="userView name"><a href=""><?php echo $_SESSION['username'];?></a> </li>
+            <li class="userView name"><a href=""><?php echo $_SESSION['username']; ?></a></li>
             <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
@@ -116,7 +116,7 @@ function test_input($data)
 </nav>
 <div class="row" id="ques">
     <form class="col s6" action="answer_verification1.php" method="post">
-        
+
         <div class="row">
             <img src="qres/18fil.png" width="90%" height="90%">
             <div class="input-field col s12">

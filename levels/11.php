@@ -29,6 +29,7 @@ function test_input($data)
     $data = htmlspecialchars($data);
     return $data;
 }
+
 ?>
 <!doctype html>
 <html lang="">
@@ -68,20 +69,18 @@ function test_input($data)
         $(document).ready(function () {
             $(".button-collapse").sideNav();
 
-            $("#hntbtn").click(function(e) {
+            $("#hntbtn").click(function (e) {
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
                     url: "get_hint.php",
-                    data: {
-
-                    },
-                    success: function(result) {
+                    data: {},
+                    success: function (result) {
                         //alert('ok:' + result);
                         var $toastContent = '<span style="word-wrap: break-word">' + result + '</span><button class="btn-flat toast-action" onclick="dismissToast()">Dismiss</button>';
                         Materialize.toast($toastContent, 100000);
                     },
-                    error: function(result) {
+                    error: function (result) {
                         //alert('error');
                     }
                 });
@@ -115,7 +114,7 @@ function test_input($data)
             <li><a href="../logout.php">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="userView name"><a href=""><?php echo $_SESSION['username'];?></a> </li>
+            <li class="userView name"><a href=""><?php echo $_SESSION['username']; ?></a></li>
             <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
@@ -149,7 +148,7 @@ function test_input($data)
         <button class="btn waves-effect waves-light" type="submit" name="action">Submit
             <i class="material-icons right">send</i>
         </button>
-        
+
         &nbsp;&nbsp;
         <br>
         <br>

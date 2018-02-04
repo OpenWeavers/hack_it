@@ -48,7 +48,7 @@ if ($_SESSION['current_level'] == $level - 1) {
         //Reflect in DB
         $query = "UPDATE track_records SET total_score='$total_score',current_level='$current_level',current_hint_took=0,last_success='$last_success' WHERE username='$username'";
         $con->query($query);
-print_r($r,$points);
+        print_r($r, $points);
         //Now handle session variables!
         $_SESSION['current_level'] = $current_level;
         $_SESSION['total_score'] = $total_score;
@@ -79,6 +79,7 @@ function test_input($data)
 <h1 align="center">You have won!</h1>
 <img src="https://media.giphy.com/media/RyXVu4ZW454IM/giphy.gif" alt="hackerman"
      style="position: absolute; left: 45%; top: 50%; margin-left: -285px; margin-top: -190px;" height="380" width="720">
-<h3 style="position: absolute; left: 30%; top: 135%; margin-top: -290px;">No, seriously you have. Don't try to find any more levels</h3>
+<h3 style="position: absolute; left: 30%; top: 135%; margin-top: -290px;">No, seriously you have. Don't try to find any
+    more levels</h3>
 </body>
 </html>

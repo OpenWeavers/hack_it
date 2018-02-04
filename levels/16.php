@@ -71,7 +71,7 @@ function test_input($data)
         });
 
     </script>
-<script>
+    <script>
         $(document).ready(function () {
             $(".button-collapse").sideNav();
 
@@ -131,7 +131,7 @@ function test_input($data)
                 <img style="border-radius: 25%" src="qres/1c.png" height="100" width="100">
             </div>
             <div style="padding-left: 20%; padding-bottom: 10px;">
-                <img  src="qres/1e.png" height="100" width="100">
+                <img src="qres/1e.png" height="100" width="100">
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -139,7 +139,7 @@ function test_input($data)
             </div>
             <div class="input-field col s12">
                 <input name="answer" id="input1" class="input-field inline" type="text">
-                <br />
+                <br/>
                 <label for="input1">Answer</label>
             </div>
         </div>

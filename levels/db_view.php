@@ -102,7 +102,7 @@ function test_input($data)
             <li><a href="../logout.php">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="userView name"><a href=""><?php echo $_SESSION['username'];?></a> </li>
+            <li class="userView name"><a href=""><?php echo $_SESSION['username']; ?></a></li>
             <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
@@ -111,14 +111,25 @@ function test_input($data)
         </ul>
     </div>
 </nav>
-    <table class="centered striped responsive-table">
-        <thead>
-        <tr><th>Username</th><th>Email</th><th>Password</th><th>Phone</th><th>College</th></tr>
-        </thead>
-        <tbody>
-        <tr><td>User1</td><td>user1@qwerty.com</td><td>c055588e18df56f877f3c3ca73790ecd</td>
-        <td>1234543211</td><td>ABC</td></tr>
-        </tbody>
-    </table>
+<table class="centered striped responsive-table">
+    <thead>
+    <tr>
+        <th>Username</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Phone</th>
+        <th>College</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>User1</td>
+        <td>user1@qwerty.com</td>
+        <td>c055588e18df56f877f3c3ca73790ecd</td>
+        <td>1234543211</td>
+        <td>ABC</td>
+    </tr>
+    </tbody>
+</table>
 </body>
 </html>

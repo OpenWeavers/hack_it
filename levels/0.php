@@ -27,20 +27,25 @@ $_SESSION['current_level'] = 1;
         .error {
             color: red;
         }
-        .header1{
+
+        .header1 {
             color: #ffffff;
 
         }
-        .btn{
+
+        .btn {
             background-color: black;
         }
-        .btn:visited{
+
+        .btn:visited {
             background-color: #000000
         }
+
         .btn:hover {
             background-color: #eb8e3f
         }
-        .btn:focus{
+
+        .btn:focus {
             background-color: gray;
         }
 
@@ -75,108 +80,111 @@ $_SESSION['current_level'] = 1;
     <div class="col m6 s12">
         <h5 class="header1">How To Play?</h5>
 
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">0. Use a Laptop!</span>
-                            <p>Using laptop to perform hacks and tweaks is much easier than on phones.</p>
-                        </div>
-
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">0. Use a Laptop!</span>
+                        <p>Using laptop to perform hacks and tweaks is much easier than on phones.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">1. Sign Up</span>
-                            <p>Sign up using the <a href="../signup.php">link</a> provided.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">1. Sign Up</span>
+                        <p>Sign up using the <a href="../signup.php">link</a> provided.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">2. Get Confirmed</span>
-                            <p>A confirmation link will be sent to your mail. Use it to login.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">2. Get Confirmed</span>
+                        <p>A confirmation link will be sent to your mail. Use it to login.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">3. Login.</span>
-                            <p>Log in and get cracking.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">3. Login.</span>
+                        <p>Log in and get cracking.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">4. Use Aids.</span>
-                            <p>Use any tool, ranging from your common-sense to Google, to arrive at the answer.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">4. Use Aids.</span>
+                        <p>Use any tool, ranging from your common-sense to Google, to arrive at the answer.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">5. Answering Standards.</span>
-                            <p>Answers in lower case, with no space in between words.
-                                For example, if answer is "LCC SJCE", you should type in "lccsjce"</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">5. Answering Standards.</span>
+                        <p>Answers in lower case, with no space in between words.
+                            For example, if answer is "LCC SJCE", you should type in "lccsjce"</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">6. Use Hints Wisely.</span>
-                            <p>Every level contains a hint, but accessing it will cause a time-penalty of 3 minutes 30 seconds.
-                                Once the hint is obtained, accessing it again won't cause any penalty.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">6. Use Hints Wisely.</span>
+                        <p>Every level contains a hint, but accessing it will cause a time-penalty of 3 minutes 30
+                            seconds.
+                            Once the hint is obtained, accessing it again won't cause any penalty.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">7. Where You Stand.</span>
-                            <p>Position in <a href="../lboard.php">leaderboard</a> is decided on the user's score. If two or more users have the same score,
-                                the tie-breaker is the time they took to reach that level.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">7. Where You Stand.</span>
+                        <p>Position in <a href="../lboard.php">leaderboard</a> is decided on the user's score. If two or
+                            more users have the same score,
+                            the tie-breaker is the time they took to reach that level.</p>
                     </div>
+
                 </div>
             </div>
-            <div class="row">
-                <div class="col s12 m10">
-                    <div class="card teal darken-2">
-                        <div class="card-content white-text">
-                            <span class="card-title">8. More Help?</span>
-                            <p>If stuck anywhere, ping us at the <a href="https://www.reddit.com/r/hack_it/" target="_blank">sub-reddit</a> provided.</p>
-                        </div>
-
+        </div>
+        <div class="row">
+            <div class="col s12 m10">
+                <div class="card teal darken-2">
+                    <div class="card-content white-text">
+                        <span class="card-title">8. More Help?</span>
+                        <p>If stuck anywhere, ping us at the <a href="https://www.reddit.com/r/hack_it/"
+                                                                target="_blank">sub-reddit</a> provided.</p>
                     </div>
+
                 </div>
             </div>
+        </div>
 
 
         <div class="row">
@@ -188,7 +196,11 @@ $_SESSION['current_level'] = 1;
 
     </div>
 </div>
-<footer class="footernobg footer-copyright"><div></div><div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img src="../img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
+<footer class="footernobg footer-copyright">
+    <div></div>
+    <div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img
+                        src="../img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div>
+</footer>
 
 </body>
 </html>
