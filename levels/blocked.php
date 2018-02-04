@@ -45,6 +45,11 @@ if (isset($_SESSION['username'])) {
         #lnk {
             color: #ffffff;
         }
+
+        .clock  {
+            zoom: 0.7;
+            -moz-transform: scale(0.7);
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>

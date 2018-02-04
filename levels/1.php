@@ -55,8 +55,8 @@ function test_input($data)
 
         #toast-container {
             min-width: 100%;
-            bottom: 0%;
-            top: 70%;
+            bottom: 70%;
+            top: 0%;
             right: 0%;
             left: 25%;
         }
@@ -117,8 +117,9 @@ function test_input($data)
 </nav>
 <div class="row" id="ques">
     <form class="col s6" action="answer_verification.php" method="post">
-
+        
         <div class="row">
+            <img src="qres/html1.png" width="43.4%" height="49%">
             <div class="input-field col s12">
                 <input name="answer" id="input1" class="input-field inline" type="text">
                 <br/>

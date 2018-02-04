@@ -41,12 +41,9 @@ function test_input($data)
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="manifest" href="../site.webmanifest">
-    <!-- Place favicon.ico in the root directory -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.teal-amber.min.css"/>
     <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
-    <!--<link rel="stylesheet" href="../css/materialize.css" >-->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection"/>
     <link rel="stylesheet" href="../css/main.css">
     <style>
@@ -62,6 +59,12 @@ function test_input($data)
             right: 0%;
             left: 25%;
         }
+        #ques{
+          padding: 1% 5%;
+          font-size: 120%;
+          color: #222;
+        }
+
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
@@ -76,12 +79,10 @@ function test_input($data)
                     url: "get_hint.php",
                     data: {},
                     success: function (result) {
-                        //alert('ok:' + result);
                         var $toastContent = '<span style="word-wrap: break-word">' + result + '</span><button class="btn-flat toast-action" onclick="dismissToast()">Dismiss</button>';
                         Materialize.toast($toastContent, 100000);
                     },
                     error: function (result) {
-                        //alert('error');
                     }
                 });
             });
@@ -92,10 +93,8 @@ function test_input($data)
         }
 
     </script>
-
 </head>
 <body>
-
 <!--[if lte IE 9]>
 <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
     your browser</a> to improve your experience and security.</p>
@@ -113,24 +112,19 @@ function test_input($data)
             <li><a href="../logout.php">Log Out</a></li>
         </ul>
         <ul class="side-nav" id="mobile-demo">
-            <li class="userView email"><a href=""><?php echo $_SESSION['username'];?></a> </li>
+            <li class="userView name"><a href=""><?php echo $_SESSION['username'];?></a> </li>
             <li><a href="">Level : <?php echo $_SESSION['current_level'] ?></a></li>
             <li><a href="../lboard.php">Leaderboard</a></li>
             <li><a href="https://www.reddit.com/r/hack_it/" target="_blank">r/hack_it</a></li>
             <li><a href="../about.php">About</a></li>
             <li><a href="../logout.php">Log Out</a></li>
-
         </ul>
     </div>
 </nav>
-
 <div class="row" id="ques">
-    <form class="col m6 s12" action="answer_verification.php" method="post">
-
+    <form class="col s6" action="answer_verification.php" method="post">
+      <div id="ques" style="text-align: center;">01101000 01100001 01100011 01101011 01101001 01110100 </div>
         <div class="row">
-            <script type="text/javascript" language="javascript">
-                $('.myIframe').css('height', $(window).height() * .5 + 'px');
-            </script>
             <div class="input-field col s12">
                 <input name="answer" id="input1" class="input-field inline" type="text">
                 <br/>
@@ -146,7 +140,7 @@ function test_input($data)
         <br>
         <button class="btn waves-effect waves-light" id="hntbtn">Hint ?</button>
         <div class="col s12">
-        <span class="error"><?php if (isset($_GET['a']) && test_input($_GET['a']) == 'f') {
+        <span class="error"><?php if (isset($_GET['a']) && ($_GET['a']) == 'f') {
                 echo "Answer is incorrect. Try again!";
             } ?></span></div>
     </form>
