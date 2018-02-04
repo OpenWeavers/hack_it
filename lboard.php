@@ -4,7 +4,7 @@ session_start();
 $db = new DBHelper();
 $con = $db->getConnection();
 
-$query = "SELECT username, total_score, current_level FROM `track_records` ORDER BY total_score DESC, last_success ASC";
+$query = "SELECT username, total_score, current_level FROM `track_records` ORDER BY current_level DESC, last_success ASC";
 $data = [];
 if ($res = $con->query($query)) {
     $i = 0;
@@ -108,6 +108,5 @@ if ($res = $con->query($query)) {
     </table>
 </div>
 </body>
-<footer class="footer footer-copyright"><div></div><div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img src="img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
 
 </html>

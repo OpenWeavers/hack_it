@@ -64,7 +64,6 @@
             max-width: 320px;
         }
     </style>
-    
 </head>
 <body>
 <!--[if lte IE 9]>
@@ -122,11 +121,11 @@
             <div class="typewriter">
                 <h6 id="limit">Congregate.Create.Contribute.</h6>
             </div>
-            </div>
+        </div>
     </main>
 </div>
 
 </body>
-<footer class="footer footer-copyright"><div></div><div><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img src="img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
+<footer class="footer footer-copyright" style="z-index: 999;"><div></div><div  ><p>© 2018 Made by&nbsp; <a href="https://github.com/OpenWeavers" target="_blank"><img style="z-index: 999;" src="img/OpenWeavers-01.png" alt="OpenWeavers" width="30" height="30"></a></p></div></footer>
 
 </html>

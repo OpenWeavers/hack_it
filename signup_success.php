@@ -89,7 +89,7 @@
 <body style="background-color: #009688">
 <div class="row">
     <div class="col m6 s12">
-        <h3 class="header1">Sign-up was successful.<br>Check your mail for account activation link.</h3>
+        <h3 class="header1">Sign-up was successful.<br>Check your mail for account activation link.<br>It may take upto 5 minutes to recieve email.</h3>
         <a href="login.php" class="btn" type="button">Login</a>
     </div>
 

@@ -1,5 +1,4 @@
 <?php
-require 'mailer.php';
 require 'com/config/DBHelper.php';
 session_start();
 if (isset($_SESSION['username'])) {
@@ -35,8 +34,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $password = hash("sha512", $password);
 
-        if (!preg_match("/^[a-zA-Z0-9 ]*$/", $username)) {
-            $usernameError = "Only letters, white space and numbers allowed in username";
+        if (!preg_match("/^[a-zA-Z0-9]*$/", $username)) {
+            $usernameError = "Only letters and numbers allowed in username";
             $error_flag = true;
         } else {
             $query = "SELECT username FROM users WHERE username='$username'";
@@ -85,8 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                     $to = $email;
                     $subject = 'Account Confirmation Link';
-                    $body = 'Click on this <a href="' . $root_path . 'confirm.php?m=c&u=' . $username . '&h=' . $hash . '"><b>link</b></a>
-                                 to activate your hack_it account.';
+                    $body = 'Click on this ' . $root_path . 'confirm.php?m=c&u=' . $username . '&h=' . $hash . ' link to activate your hack_it account.Or copy paste it to browser';
                     mail($to, $subject, $body);
 
                     $query = "INSERT INTO users(username,email,password,phone,college,hash) VALUES ('$username','$email','$password','$phone','$college','$hash')";
@@ -145,6 +143,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         .error {
             color: #ff0000;
         }
+        div.zoomed {
+            zoom: 0.7;
+            -moz-transform: scale(.7);
+            -moz-transform-origin: 0 0;
+        }
     </style>
     <script>
         $(document).ready(function () {
@@ -157,26 +160,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             var flag = true;
 
             x = document.getElementById("username").value;
-            pat = /^[a-zA-Z0-9 ]{3,}$/;
+            pat = /^[a-zA-Z0-9]{3,}$/;
             if (pat.test(x)) {
                 document.getElementById('usernameE').innerHTML = '';
             }
             else {
                 flag = false;
                 document.getElementById('usernameE').innerHTML =
-                    'Only alphabets, numbers and whitespaces allowed (Minimum: 3)';
+                    'Only alphabets and numbers allowed (Minimum: 3)';
             }
 
-            x = document.getElementById("password").value;
-            pat = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@!%*#?&])[A-Za-z\d$@!%*#?&]{8,}$/;
-            if (pat.test(x)) {
-                document.getElementById('passwordE').innerHTML = '';
-            }
-            else {
-                flag = false;
-                document.getElementById('passwordE').innerHTML =
-                    'Minimum eight characters(at least one letter, one number and one special character)';
-            }
+        
 
             x = document.getElementById('phone').value;
             pat = /^\d{10}$/;
@@ -201,7 +195,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
 
             x = document.getElementById('college').value;
-            pat = /^[a-zA-Z]{2,}$/;
+            pat = /^[a-zA-Z ]{2,}$/;
             if (pat.test(x)) {
                 document.getElementById('collegeE').innerHTML = '';
             }
@@ -236,7 +230,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
     </div>
 </nav>
-<div class="row" id="sgnupform">
+<div class="row zoomed" id="sgnupform">
 <form class="col m6 s12" action="signup.php" onsubmit="return validateForm()" method="post">
     <div class="row">
         <div class="input-field col s12">

@@ -112,7 +112,7 @@ session_start();
                 <p>
                 <ol>
                     <li>Laptops are recommended over Mobile Phones.</li>
-                    <li>Sign up using the link provided.</li>
+                    <li>Sign up using the link provided.Use no space in username.</li>
                     <li>A confirmation link will be sent to your mail. Use it to login.</li>
                     <li>Log in and get cracking.</li>
                     <li>Use any tool, ranging from your common-sense to Google, to arrive at the answer.</li>
@@ -127,6 +127,7 @@ session_start();
                         the tie-breaker is the time they took to reach that level.
                     </li>
                     <li>If stuck anywhere, ping us at the sub-reddit provided.</li>
+                    <li>Admin's decision is final.</li>
                 </ol>
                 Cheers.</p>
             </div>

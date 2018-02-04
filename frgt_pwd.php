@@ -82,7 +82,6 @@
 </script>
 <?php
 
-require 'mailer.php';
 
 function test_input($data)
 {
@@ -140,8 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             $to = $r['email'];
             $subject = 'Password Reset Confirmation Link';
             $body = 'A Password recovery attempt was made on your account.<br>
-                              Click on this <a href="' . $root_path . 'confirm.php?m=r&u=' . $r['username'] . '&h=' . $hash . '"><b>link</b></a>
-                              to confirm password change';
+                              Click on this <' . $root_path . 'confirm.php?m=r&u=' . $r['username'] . '&h=' . $hash . ' link to confirm password change';
             mail($to, $subject, $body);
 
             echo 'Message has been sent.<br>';
