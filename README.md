@@ -50,7 +50,7 @@ hack_it is an Online Contest where participants try to apply certain hacks/tweak
   19. Answer: <insert hash value here>
 > The SHA256 hash value given in the question, when looked up on Google gives the file to which it belonged. The files was to be downloaded and SHA512 of the same was to be calculated and the hash key generated was the answer.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/19.php))
   20. Answer: (not really)
-> Just chnaging the URL from 20.php to 21.php would level up.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/20.php))
+> Just changing the URL from 20.php to 21.php would level up.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/20.php))
   21. Winner Page
 > This page marked the end of the contest.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/21.php))
 
