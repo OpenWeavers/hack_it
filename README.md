@@ -5,7 +5,7 @@
 
 hack_it is an Online Contest where participants try to apply certain hacks/tweaks/googling skills to solve a problem.
 
-  - February 2018 was the first time this contest was organinzed.
+  - February 2018 was the first time this contest was organized.
   - This Repository contains the entire source-code of the Online Interface via which the participants took part in the contest.
   - This repository also contains the problems asked in the February 2018 Contest.
 
