@@ -43,8 +43,8 @@ hack_it is an Online Contest where participants try to apply certain hacks/tweak
 > <Add details here>.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/15.php))
   16. Answer: pnrfnepvcure
 > After decoding the image, one must apply ROT13 on the string "caesarcipher".(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/16.php))
-  17. Answer: nothing
-> <Add details here>.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/17.php))
+  17. Answer: (Unique answer for each user)
+> The URL was to be appended with "?key1=0&key2=1&key3=1&key4=0" to match one-bit XOR output through the keys.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/17.php))
   18. Answer: garymckinnon
 > <Add details here>.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/18.php))
   19. Answer: <insert hash value here>
