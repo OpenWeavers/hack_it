@@ -39,7 +39,7 @@ hack_it is an Online Contest where participants try to apply certain hacks/tweak
 > There was an image of a router with MAC Address, which maps to TP-Link.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/13.php))
   14. Answer: googledns
 > The image when broken down we get 4 8s, giving us 8.8.8.8, which is Google's Public DNS.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/14.php))
-  15. Answer: <insert hash value here>
+  15. Answer: f96392f8e4b970960e504c75bb037a73da2c1029c55442c281f38efc3815a3a1
 > There was a file whose SHA256 value needed to be calculated based on the clue-text provided.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/15.php))
   16. Answer: pnrfnepvcure
 > After decoding the image, one must apply ROT13 on the string "caesarcipher".(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/16.php))
