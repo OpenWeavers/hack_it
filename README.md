@@ -48,7 +48,7 @@ hack_it is an Online Contest where participants try to apply certain hacks/tweak
   18. Answer: garymckinnon
 > The first image is of american actresses and comedian Kate McKinnon and the second is of a TV series called Army wives.
 Combining these both and some searches will lead you to the answer Gary McKinnon who is known to have caused  "the biggest military computer hack of all time.".(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/18.php))
-  19. Answer: <insert hash value here>
+  19. Answer: 08cae8c86f6509c5d3c7f4b2458f2c8c37f27cc656a58fc8c8ac208f0174e773a2d7d2c24a997ae8a3a24a9bcfc9be03dcfadcdae23a0449c4ba9ae9a5b91c0c
 > The SHA256 hash value given in the question, when looked up on Google gives the file to which it belonged. The files was to be downloaded and SHA512 of the same was to be calculated and the hash key generated was the answer.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/19.php))
   20. Answer: (not really)
 > Just changing the URL from 20.php to 21.php would level up.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/20.php))
