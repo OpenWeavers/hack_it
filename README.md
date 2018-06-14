@@ -55,12 +55,21 @@ Combining these both and some searches will lead you to the answer Gary McKinnon
   21. Winner Page
 > This page marked the end of the contest.(check [here](https://github.com/OpenWeavers/hack_it/blob/master/levels/21.php))
 
-### by
 
+<p align="left">
+  <a href="https://github.com/OpenWeavers">
+    <img src="https://github.com/OpenWeavers/hack_it/blob/master/img/OpenWeavers-01.png" width="50">
+  </a>
+</p>
 
-### OpenWeavers <img src="https://github.com/OpenWeavers/hack_it/blob/master/img/OpenWeavers-01.png" alt="OpenWeavers" width=30px>
+<h3 align="left">Made by OpenWeavers</h3>
+<p align="right">
+  <a href="http://materializecss.com/">
+    <img src="http://materializecss.com/res/materialize.svg" width="50">
+  </a>
+</p>
 
-
+<h3 align="right">using MaterializeCSS</h3>
 
 
 
